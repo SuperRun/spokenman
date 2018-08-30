@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.otadatadictionary.mapper.DataDictionaryMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.otadatadictionary.client.domain.DataDictionary"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO data_dictionary
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="actionBy != null">
+                action_by,
+            </if>
+            <if test="actionTime != null">
+                action_time,
+            </if>
+            <if test="uplink != null">
+                uplink,
+            </if>
+            <if test="ctrlId != null">
+                ctrl_id,
+            </if>
+            <if test="codeType != null">
+                code_type,
+            </if>
+            <if test="subCodeType != null">
+                sub_code_type,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="globalSeq != null">
+                global_seq,
+            </if>
+            <if test="valueStr != null">
+                value_str,
+            </if>
+            <if test="valueRule != null">
+                value_rule,
+            </if>
+            <if test="link != null">
+                link,
+            </if>
+            <if test="rank != null">
+                rank,
+            </if>
+            <if test="picPath != null">
+                pic_path,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="actionBy != null">
+                #{actionBy},
+            </if>
+            <if test="actionTime != null">
+                #{actionTime},
+            </if>
+            <if test="uplink != null">
+                #{uplink},
+            </if>
+            <if test="ctrlId != null">
+                #{ctrlId},
+            </if>
+            <if test="codeType != null">
+                #{codeType},
+            </if>
+            <if test="subCodeType != null">
+                #{subCodeType},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="globalSeq != null">
+                #{globalSeq},
+            </if>
+            <if test="valueStr != null">
+                #{valueStr},
+            </if>
+            <if test="valueRule != null">
+                #{valueRule},
+            </if>
+            <if test="link != null">
+                #{link},
+            </if>
+            <if test="rank != null">
+                #{rank},
+            </if>
+            <if test="picPath != null">
+                #{picPath},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="long"
+        resultType="com.zust.itee.otadatadictionary.client.domain.DataDictionary">
+        SELECT *
+        FROM data_dictionary
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.otadatadictionary.client.domain.DataDictionary">
+        SELECT *
+        FROM data_dictionary
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="actionBy != null">
+                and action_by = #{actionBy}
+            </if>
+            <if test="actionTime != null">
+                and action_time = #{actionTime}
+            </if>
+            <if test="uplink != null">
+                and uplink = #{uplink}
+            </if>
+            <if test="ctrlId != null">
+                and ctrl_id = #{ctrlId}
+            </if>
+            <if test="codeType != null">
+                and code_type = #{codeType}
+            </if>
+            <if test="subCodeType != null">
+                and sub_code_type = #{subCodeType}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="globalSeq != null">
+                and global_seq = #{globalSeq}
+            </if>
+            <if test="valueStr != null">
+                and value_str = #{valueStr}
+            </if>
+            <if test="valueRule != null">
+                and value_rule = #{valueRule}
+            </if>
+            <if test="link != null">
+                and link = #{link}
+            </if>
+            <if test="rank != null">
+                and rank = #{rank}
+            </if>
+            <if test="picPath != null">
+                and pic_path = #{picPath}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter"
+        parameterType="com.zust.itee.otadatadictionary.client.domain.DataDictionary"
+        resultType="Long">
+        SELECT count(id)
+        FROM data_dictionary
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="actionBy != null">
+                and action_by = #{actionBy}
+            </if>
+            <if test="actionTime != null">
+                and action_time = #{actionTime}
+            </if>
+            <if test="uplink != null">
+                and uplink = #{uplink}
+            </if>
+            <if test="ctrlId != null">
+                and ctrl_id = #{ctrlId}
+            </if>
+            <if test="codeType != null">
+                and code_type = #{codeType}
+            </if>
+            <if test="subCodeType != null">
+                and sub_code_type = #{subCodeType}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="globalSeq != null">
+                and global_seq = #{globalSeq}
+            </if>
+            <if test="valueStr != null">
+                and value_str = #{valueStr}
+            </if>
+            <if test="valueRule != null">
+                and value_rule = #{valueRule}
+            </if>
+            <if test="link != null">
+                and link = #{link}
+            </if>
+            <if test="rank != null">
+                and rank = #{rank}
+            </if>
+            <if test="picPath != null">
+                and pic_path = #{picPath}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update"
+        parameterType="com.zust.itee.otadatadictionary.client.domain.DataDictionary">
+        UPDATE data_dictionary
+        <set>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="actionBy != null">
+                action_by = #{actionBy},
+            </if>
+            <if test="actionTime != null">
+                action_time = #{actionTime},
+            </if>
+            <if test="uplink != null">
+                uplink = #{uplink},
+            </if>
+            <if test="ctrlId != null">
+                ctrl_id = #{ctrlId},
+            </if>
+            <if test="codeType != null">
+                code_type = #{codeType},
+            </if>
+            <if test="subCodeType != null">
+                sub_code_type = #{subCodeType},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="globalSeq != null">
+                global_seq = #{globalSeq},
+            </if>
+            <if test="valueStr != null">
+                value_str = #{valueStr},
+            </if>
+            <if test="valueRule != null">
+                value_rule = #{valueRule},
+            </if>
+            <if test="link != null">
+                link = #{link},
+            </if>
+            <if test="rank != null">
+                rank = #{rank},
+            </if>
+            <if test="picPath != null">
+                pic_path = #{picPath},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+</mapper>
+

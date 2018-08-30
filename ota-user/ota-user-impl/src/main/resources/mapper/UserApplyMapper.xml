@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.otauser.impl.mapper.UserApplyMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.otauser.client.domain.UserApply"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_user_apply
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="orgId != null">
+                org_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="approveTime != null">
+                approve_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="orgId != null">
+                #{orgId},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="approveTime != null">
+                #{approveTime},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.otauser.client.domain.UserApply">
+        SELECT *
+        FROM ota_user_apply
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.otauser.client.domain.UserApply">
+        SELECT *
+        FROM ota_user_apply
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="approveTime != null">
+                and approve_time = #{approveTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.otauser.client.domain.UserApply"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_user_apply
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">  <if test="id != null">
+            and id = #{id}
+        </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="approveTime != null">
+                and approve_time = #{approveTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.otauser.client.domain.UserApply">
+        UPDATE ota_user_apply
+        <set>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="orgId != null">
+                org_id = #{orgId},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="approveTime != null">
+                approve_time = #{approveTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+</mapper>
+
