@@ -232,9 +232,6 @@ public class UserManagerImpl implements UserManager {
         user.setCreatorId(userId);
         user.setPassword("123456");
         log.info("==平台用户新增个人/讲师用户，创建用户== user:{}", user);
-        userService.upsert(user);
-        // 增加考试系统驾驶员
-        driverService.saveByOtaUser(user);
     }
 
     @Override
@@ -250,8 +247,6 @@ public class UserManagerImpl implements UserManager {
         user.setPassword("123456");
         log.info("==平台用户新增单位用户，创建用户== user:{}", user);
         userService.upsert(user);
-        // 创建考试系统工作人员
-        memberService.saveByOtaUser(user);
 
         // 创建单位
         Organization organization = Organization.builder()
@@ -268,16 +263,13 @@ public class UserManagerImpl implements UserManager {
                 .build();
         log.info("==平台用户新增平台用户，创建单位== org:{}", organization);
         organizationService.upsert(organization);
-        // 创建考试系统组织
-        examOrgService.saveByOtaOrg(organization);
+
         Integer orgId = organization.getId();
         log.info("==平台用户新增平台用户，创建单位结果== orgId:{}", orgId);
 
         // 更新用户 orgId
         user.setOrgId(orgId);
         userService.upsert(user);
-        // 更新考试系统工作人员组织
-        memberService.updateMemberOrgByOta(user);
     }
 
     @Override
@@ -300,9 +292,6 @@ public class UserManagerImpl implements UserManager {
             user.setOrgName(organization.getName());
         }
         log.info("==新增单位个人用户，创建用户== user:{}", user);
-        userService.upsert(user);
-        // 创建考试系统驾驶员
-        driverService.saveByOtaUser(user);
     }
 
     @SuppressWarnings("unchecked")
