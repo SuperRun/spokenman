@@ -1,0 +1,10 @@
+
+1.设计表tdriver_honour中的id属性增加 (自动递增);
+
+2.五个表tdriver_honour
+	tdriver_insurance_compensation
+	tdriver_reward
+	tdriver_traffic_violation
+	tdriver_work_history
+
+  分别添加status 字段tinyint 4 0 非null （状态：-1->删除；0->待审核；1->可用 ）

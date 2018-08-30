@@ -1,0 +1,11 @@
+.notice{
+    display: inline-block;
+    color: #999999;
+    font-size: 12px;
+}
+.group-inline{
+    display: inline-block;
+}
+.btn-table{
+    margin: 5px;
+}

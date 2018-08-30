@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平台管理</title>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+	<script src="../../layui/layui.js"></script>
+
+</head>
+
+<body>
+<div class="layui-fluid" style="margin-top: 20px;">
+
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">题干</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name" lay-verify="title" autocomplete="off"  class="layui-input">
+                <div class="layui-input-block">
+                    <input type="radio" name="choice" value="单选" title="单选" checked="">
+                    <input type="radio" name="choice" value="多选" title="多选">
+                </div>
+
+            </div>
+        </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label">A</label>
+        <div class="layui-inline">
+            <input type="text" name="" placeholder="请输入题目" class="layui-input">
+        </div>
+        <div class="layui-inline">
+            <input type="checkbox" name="" lay-skin="primary">
+        </div>
+        <div class="layui-inline">
+            <button  class="layui-btn layui-btn-primary delbtn">删除</button>
+        </div>
+        </div>
+        <div class="layui-input-block" style="position: relative;top: 160px;">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+
+    </form>
+<div class="layui-col-md12" style="">
+    <label class="layui-form-label"></label>
+    <button class="layui-btn layui-btn-primary" id="addbtn" data-method="add">新增选项</button>
+</div>
+<div class="layui-col-md12 " style="margin-top: 20px;" id="addchoice" style="display: none">
+    <label class="layui-form-label">B</label>
+    <div class="layui-inline">
+        <input type="text" name="choiceB" id="new" lay-verify="title" autocomplete="off"  class="layui-input" value="">
+        <button class="layui-btn layui-btn-primary" id="sure" data-method="add" style="position:relative;top: -39px; right: -200px">确定</button>
+    </div>
+</div>
+
+</div>
+
+<script src="../../js/jquery-2.1.0.js"></script>
+<script>
+    layui.use(['element', 'form'],function(){});
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+
+        //时间选择器
+        laydate.render({
+            elem: '#date'
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#date2'
+            ,type: 'datetime'
+        });
+    });
+    $(document).ready(function(e) {
+        $("#addchoice").hide();
+        $("#addbtn").click(function(e) {
+            $("#addchoice").show();
+        });
+        $("#sure").click(function(e) {
+            $("#addchoice").hide();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.vedio-header{
+	background: #537791;
+}
+#back,#message{
+	font-size: 20px;
+	color: #F7F6E7;
+	line-height: 60px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+#message:hover,#back:hover{
+	color: #fff;
+}
+#course-title h3{
+	font-size: 16px;
+	line-height: 60px;
+	color: #F7F6E7;
+}
+#message{
+	margin-left: 300px;
+}
+#headImg{
+	margin-top: 5px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	float: right;
+	margin-right: 50px;
+}
+.tab-bg{
+	background: #E7E6E1;
+}
+#content{
+	display: block;
+	margin-left: 80px;
+	font-size: 18px;
+}
+#question form{
+	margin-top: 50px;
+}
+#question label{
+	font-size: 16px;
+}
+#question p{
+	height: 28px;
+	line-height: 38px;
+	font-size: 16px;
+	
+}

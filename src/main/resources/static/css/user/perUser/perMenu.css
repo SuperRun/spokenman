@@ -1,0 +1,51 @@
+#usermsg{
+	position: absolute;
+	top: -10px;
+	left: 86%;
+}
+.logo{
+    float: left;
+    z-index:2;
+    left: 50px;
+    top: 5px;
+}
+.platform-nav {
+    background-color: #537791;
+    padding: 0px 190px;
+}
+.layui-nav a {
+    font-size: 16px;
+}
+#headImg{
+	margin-top: 15px;
+	margin-left: 10px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+}
+#username{
+	font-size:16px;
+	line-height: 80px;
+}
+#triangle{
+	position: absolute;
+	left: 10%;
+	top: 80%;
+	z-index: 1;
+}
+#detail{
+	min-width: 60% !important;
+	margin-top: 14px;
+	text-align: center;
+	z-index: 0;
+}
+/*页面footer*/
+.platform-footer{
+	border-top: 1px solid #ececec;
+	background: #537791;
+}
+.platform-footer p{
+	text-align: center;
+	margin-top: 2%;
+	color:  /* #606061 */#fff ;
+}

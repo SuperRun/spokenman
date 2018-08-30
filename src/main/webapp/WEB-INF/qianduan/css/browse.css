@@ -1,0 +1,11 @@
+.announcement_mes{
+    font-size: 12px;
+    color: #4e4e4e;
+}
+.announcement_mes label{
+    margin-left: 10px;
+    font-weight: normal;
+}
+.announcement_footer {
+    margin-top: 20px;
+}

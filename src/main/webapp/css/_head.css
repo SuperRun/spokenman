@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+/*---------------- 头部---------------------- */
+body{ margin:0 auto;}
+#header{ width:100%; margin:0 auto;}
+.ad img{ width:100%; margin:0 auto;}
+.top{ width:100%; background:url(http://static.ajianla.com/img/top_bg.png) repeat-x; overflow:hidden;}
+.top_main{ width:1200px; margin:0 auto;overflow: hidden;}
+.top_r span.top_1 a{ background:url(http://static.ajianla.com/img/top_r1.png) no-repeat;display: inline-block;height: 38px;padding-left: 36px;padding-right: 10px;line-height: 36px; font-family:微软雅黑; font-size:14px; color:#666;cursor:pointer;text-decoration: inherit;}
+.top_r span.top_1 a:hover{ color:#fff; background:#0067b3 url(http://static.ajianla.com/img/top_r1h.png) no-repeat;}
+.top_r span.top_1 a.hom{color:#fff; background:#0067b3 url(http://static.ajianla.com/img/top_r1h.png) no-repeat;}
+.top_r span.top_2 a{ background:url(http://static.ajianla.com/img/top_r2.png) no-repeat;display: inline-block;height: 38px;padding-left: 47px;padding-right: 30px;line-height: 36px; font-family:微软雅黑; font-size:14px; color:#666;cursor:pointer;margin-left: -8px;text-decoration: inherit;}
+.top_r span.top_2 a:hover{ color:#fff; background:#0067b3 url(http://static.ajianla.com/img/top_r2h.png) no-repeat;}
+.top_r span.top_3 a{ background:url(http://static.ajianla.com/img/top_r3.png) no-repeat;display: inline-block;height: 38px;padding-left: 47px;padding-right: 17px;line-height: 36px; font-family:微软雅黑; font-size:14px; color:#666;cursor:pointer;margin-left: -13px;text-decoration: inherit;}
+.top_r span.top_3 a:hover{ color:#fff; background:#0067b3 url(http://static.ajianla.com/img/top_r3h.png) no-repeat;}
+.top_r span.top_0 a{ display: inline-block;height: 38px;padding-left: 47px;padding-right: 17px;line-height: 36px; font-family:微软雅黑; font-size:14px; color:#666;cursor:pointer;margin-left: -13px;text-decoration: inherit;}
+.top_r span.top_0 a:hover{ color:#fff; background:#0067b3 ;}
+.top_l{ float:left; overflow:hidden;}
+.top_r{ float:right; overflow:hidden;}
+.top_l img{ cursor:pointer;}
+.top_l span.top_0{ height: 40px;line-height: 40px;vertical-align: top;float: none;font-size: 14px;font-family: 微软雅黑; color:#666;}
+
+.header{ background:#FFF; width:1200px; margin:0 auto; height:120px;}
+.header img{ float:left;}
+
+/* 搜索框 */
+.search{border:3px solid #0067b3;height:35px;margin:40px auto 0 auto;width:487px;float:left;margin-left: 107px;margin-top: 33px;}
+.search select{}
+.search .select_box{font-size: 14px;font-family: 微软雅黑;color:#999999;width:100px;height:35px;line-height:35px;padding-left:12px;border:0;border:none;outline:none;float:left;position:relative;background:#e9e8e8;margin-right:0px;}
+.search .select_showbox{height:35px;background:#e9e8e8 url(http://static.ajianla.com/img/search_ico.png) no-repeat 80px center;text-indent:1.5em;font-size: 14px;font-family: 微软雅黑;}
+.search .select_showbox.active{background:url(http://static.ajianla.com/img/search_ico_hover.png) no-repeat 80px center;}
+.search .select_option{border:2px solid #0067b3;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
+.search .select_option li{text-indent:1.5em;width:100px;cursor:pointer;}
+.search .select_option li.selected{background-color:#F3F3F3;color:#999;}
+.search .select_option li.hover{background:#BEBEBE;color:#fff;}
+.search input{}
+.search input.inp_srh,.search input.btn_srh{border:none;background:none;height:35px;line-height:35px;float:left}
+.search input.inp_srh{outline:none;width:310px;font-family: 微软雅黑;font-size: 12px;text-indent: 1em;}
+.search input.btn_srh{background:#0067b3;color:#FFF;font-family: 微软雅黑;font-size:14px;width:77px;}
+.search p{ color:#a7a6a6;font-family: 微软雅黑;font-size:12px;line-height: 31px;}
+
+.header_r{ width:300px; float:right;margin-top: 32px;}
+.header_r img{ width:30px;float: none;}
+.header_r li{ float:left;width: 100px;text-align: center; }
+.header_r li.aa{background:url(http://static.ajianla.com/img/header_line.png) 96px no-repeat;}
+.header_r li p{ color:#898989;font-family: 微软雅黑;font-size:12px;}
+
+
+
+
+/*下拉搜索框*/
+.head_sou{ width:250px; height:53px; background:#0067b3; position:absolute; display:none;}
+
+.dropDownList{position:absolute;right:29px;top:11px;}
+.dropDownList div.dropdown{margin-right:120px;display:block;width:90px;height:26px;background:#0067b3 url(http://static.ajianla.com/img/001.png) 70px center no-repeat;line-height:26px;text-indent:12px;border:solid 1px #0078d1;cursor:default;color: #fff;}
+.dropDownList span{display:block;width:90px;height:26px;background:#0067b3 url(http://static.ajianla.com/img/001.png) 70px center no-repeat;line-height:26px;text-indent:12px;border:solid 1px #0078d1;cursor:default;color: #fff;}
+.dropDownList span.over{background-position:left bottom;border-color:#0078d1;background: #0067b3 url(http://static.ajianla.com/img/002.png) 70px center no-repeat;}
+	.dropDownList ul{width:90px;display:none;position:absolute;}
+		.dropDownList ul li{background:#eee;height:20px;width:100%;padding:3px 0;text-indent:12px;cursor:default;line-height:20px; color:#333;}
+		/*普通状态下的样式*/
+		.dropDownList ul li.normal{background:#eee;}
+		/*鼠标移上的样式*/
+		.dropDownList ul li.hover{background:#ccc;}
+		/*被选中的样式*/
+		.dropDownList ul li.current{background:#c2c2c2;font-weight:bold;}
+	.dropDownList ul.show{display:block;}
+	
+	
+/* banner */
+.banner{position:relative;height:400px;overflow:hidden;width:100%;}
+.banner .show{width:2500px;position:absolute;left:50%;top:0px;margin-left:-1250px;height:400px;overflow:hidden;}
+.banner .show ul{position:relative;height:400px;overflow:hidden;width:2500px;float:left;}
+.banner .show ul li{text-align:center;width:2500px;float:left;height:400px;position:absolute;display:none}
+.banner .focus{position:absolute;width:140px;padding-left:10px;padding-top:13px;bottom:0px;right:0px;height:29px;}
+.banner .focus a{width:14px;height:14px;background:url(http://static.ajianla.com/img/ico01.png) no-repeat left -24px;float:left;margin-left:10px;display:inline-block}
+.banner .focus a.on{background:url(http://static.ajianla.com/img/ico01.png) no-repeat left top}
+.all_bg{background-image:url(http://static.ajianla.com/img/all_bg.png);background-repeat:no-repeat}
+.wrapper{width:1000px;margin:0 auto;}
+/* hot */
+
+.hot .list{float:left;width:860px;padding-left:10px;height:42px;position:relative;float:left;}
+.hot .list .prev{display:block;width:18px;height:15px;position:absolute;background-position:-42px -108px;top:13px;left:80px;}
+.hot .list .next{display:block;width:18px;height:15px;position:absolute;background-position:-80px -108px;top:13px;left:105px}
+.list_txt{font-size:16px;width:145px;float:left;}
+.hot .list span.tit{font-size:12px;width:145px;float:left;color:#151515;}
+.hot .list a{color:#000000;font-size:12px;text-decoration:none;}
+.hot .list a:hover{color:#0157AD;font-size:12px;text-decoration:none;}
+.hot .list div{width:700px;float:left;height:42px;position:relative;overflow:hidden}
+.hot .list div ul{width:700px;position:absolute}
+
+
+
+/* 导航 */
+#nav{ width:100%; background:url( http://static.ajianla.com/img/nav_bg.png) repeat-x; margin:0 auto; height:51px;}
+.nav{ width:1200px; margin:0 auto;}
+.nav div p{ background: #00528f url(http://static.ajianla.com/img/down.png) 186px no-repeat;color: #fff;font-family: 微软雅黑;font-size: 16px;padding: 13px 24px; cursor:pointer;}
+.downmenu{ background:#fff; position:absolute; top:50px; left:0px; z-index:1000; width:221px; display:none;}
+.downmenu h11{ color:#333;font-family: 微软雅黑;font-size:14px; font-weight:normal;height: 50px;line-height: 50px;border-bottom-color: #666;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 5px;margin-left: 20px;}
+.downmenu ul{ }
+.downmenu ul li{ background:url(http://static.ajianla.com/img/ul_li.png) 26px 9px no-repeat;border-bottom-color: #f5f5f5;border-bottom-style: solid;border-bottom-width: 1px; position:relative;}
+.erji{ position:absolute;top:-32px; left:221px;width: 165px;background: #0067b3;padding-top: 5px;}
+.d_erji{ display:none;}
+
+.d_erji dl.erji dd a{ color:#fff;}
+.d_erji dl.erji dd:hover a{ color:#bee3ff;}
+.downmenu ul li:hover{ background:#0067b3 url(http://static.ajianla.com/img/ul_lih.png) 26px 9px no-repeat ;}
+.downmenu ul li a{ color:#898989;font-family: 微软雅黑;font-size:12px; height: 30px;line-height: 30px;padding-left: 14px;padding-left: 39px; }
+.downmenu ul li:hover a{color:#fff; }
+.nav div p:hover{background:#00528f  url(http://static.ajianla.com/img/up.png) 186px no-repeat;}
+.nav_list{ width:900px; float:left;padding-top: 13px;}
+.nav_list li{ float:left;margin-left: 83px;}
+.nav_list li a{color:#fff;font-family: 微软雅黑;font-size:16px;}
+.d_erji{ width:150px; background:#0067b3;}
+
+/*member-left*/
+.list{ margin-top:31px;}
+.list li.f a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/1.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.f:hover a p{background:url(http://static.ajianla.com/img/1hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+
+.list li.s a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/2.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px;cursor:pointer;}
+.list li.s:hover a p{background:url(http://static.ajianla.com/img/2hover.png) -5px 3px no-repeat; color:#0067b3;}
+
+.list li.t a p{ color:#fff;font-family: 微软雅黑;font-size:16px;background:url(http://static.ajianla.com/img/3.png) 20px 9px no-repeat; height:40px; height:40px; padding-left: 56px;padding-top: 8px;cursor:pointer;}
+.list li.t:hover a p{background:url(http://static.ajianla.com/img/3hover.png) -5px 3px no-repeat; color:#0067b3;}
+
+.list li.fo a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/4.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px;cursor:pointer;}
+.list li.fo:hover a p{background:url(http://static.ajianla.com/img/4hover.png) -5px 3px no-repeat; color:#0067b3;}
+
+.list li.fi a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/5.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px;cursor:pointer;}
+.list li.fi:hover a p{background:url(http://static.ajianla.com/img/5hover.png) -5px 3px no-repeat; color:#0067b3;}
+
+.list li.si a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/6.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px;cursor:pointer;margin-bottom: 30px;}
+.list li.si:hover a p{background:url(http://static.ajianla.com/img/6hover.png) -5px 3px no-repeat; color:#0067b3;}
+
+ 
+.no{ display:none; margin-top: 2px;margin-left: 56px;}
+/*.main_l ul.list li.zk:hover .no{ display:block;}*/
+.list li ul.no li{color: #fff; background:url(http://static.ajianla.com/img/dian.png) -2px center no-repeat;padding-left: 13px;}
+.list li ul.no li a{  color:#a4d8ff;font-family: 微软雅黑;font-size:12px;line-height: 23px; background:none !important; te}
+.list li ul.no li.zk2:hover a{ color:#fff;}
+
+/*provider-left*/
+.list{ margin-top:31px;}
+.list li.d1 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d1.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d1:hover a p{background:url(http://static.ajianla.com/img/d1hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d2 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d2.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d2:hover a p{background:url(http://static.ajianla.com/img/d2hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d3 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d3.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d3:hover a p{background:url(http://static.ajianla.com/img/d3hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d4 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d4.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d4:hover a p{background:url(http://static.ajianla.com/img/d4hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d5 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d5.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d5:hover a p{background:url(http://static.ajianla.com/img/d5hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d6 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d6.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d6:hover a p{background:url(http://static.ajianla.com/img/d6hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d7 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d7.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d7:hover a p{background:url(http://static.ajianla.com/img/d7hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d8 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d8.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d8:hover a p{background:url(http://static.ajianla.com/img/d8hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d9 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d9.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d9:hover a p{background:url(http://static.ajianla.com/img/d9hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d10 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d10.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d10:hover a p{background:url(http://static.ajianla.com/img/d10hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d11 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d11.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d11:hover a p{background:url(http://static.ajianla.com/img/d11hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d12 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d12.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d12:hover a p{background:url(http://static.ajianla.com/img/d12hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d13 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d13.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d13:hover a p{background:url(http://static.ajianla.com/img/d13hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+.list{ margin-top:31px;}
+.list li.d14 a p{ color:#fff;font-family: 微软雅黑;font-size:16px; background:url(http://static.ajianla.com/img/d14.png) 20px 9px no-repeat; height:40px; padding-left: 56px;padding-top: 8px; cursor:pointer;}
+.list li.d14:hover a p{background:url(http://static.ajianla.com/img/d14hover.png) -5px 3px no-repeat;color:#0067b3; }
+
+
+
+
+/* 脚步 */
+/*---------------- 脚步---------------------- */
+#footer{ width:100%; background:#f5f5f5; margin:o auto;}
+.footer{ width:100%; background:#FFF; margin:0 auto;overflow: hidden;}
+.footer p{margin-bottom:0px;}
+.footer_m{ width:1200px; margin:0 auto;overflow: hidden;padding-bottom: 40px;}
+.footer_m ul{ background:url(http://static.ajianla.com/img/foot_1.png) 0px 33px no-repeat; padding-top:73px;display: inline-block;margin-right: 142px; float:left;}
+.footer_m ul li{ background:url(http://static.ajianla.com/img/foot_li.png) 16px 7px no-repeat; padding-left: 34px;}
+.footer_m ul li a p{ color:#898989; font-family:微软雅黑; font-size:14px;}
+.footer_m ul li a p:hover{ color:#0067b3;}
+.f_l{ float:right;margin-top: 30px;}
+.f_l img{ width:95px; float:left;margin-right: 16px;}
+.f_l p.fuwu{ color:#666; font-family:微软雅黑; font-size:24px;}
+.f_l p.fuwu span{ color:#666; font-family:arial; font-size:12px;padding-left: 10px;}
+.f_l img.tu2{margin-left: 10px;}
+.tel{ color:#0067b3; font-family:微软雅黑; font-size:30px;}
+.foot_b{ width:1200px; margin:0 auto;padding-top: 23px;}
+.foot_b p{ text-align:center;line-height: 20px;color:#666; font-family:微软雅黑; font-size:12px;}
+.foot_b img{ text-align:center;}
+

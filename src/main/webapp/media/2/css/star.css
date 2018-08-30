@@ -1,0 +1,10 @@
+.table-striped{
+    table-layout: fixed
+}
+.show-up{
+    color: #337ab7;
+    float: right;
+    margin-right: 35px;
+    margin-top: 5px;
+    cursor: pointer;
+}

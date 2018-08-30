@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 586421 */
+  src: url('iconfont/iconfont.eot');
+  src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont/iconfont.woff') format('woff'),
+  url('iconfont/iconfont.ttf') format('truetype'),
+  url('iconfont/iconfont.svg#iconfont') format('svg');
+} 
+  
+.iconfont {  
+  font-family:"iconfont" !important;  
+  font-size:20px;
+  color: white;
+  font-style:normal;  
+  -webkit-font-smoothing: antialiased;  
+  -moz-osx-font-smoothing: grayscale;  
+} 

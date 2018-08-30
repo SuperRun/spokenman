@@ -1,0 +1,26 @@
+.settings-cont .setting-right {
+    width: 1200px;
+    min-height: 1300px;
+    margin-bottom: 30px;
+}
+.profile span{
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    width: 80px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+}
+.orag-info .layui-inline .layui-input-inline{
+    width: 400px;
+    height: 222px;
+    margin-right: 50px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+}
+.orag-info .layui-inline .layui-input-inline img{
+    width: 400px;
+    height: 222px;
+}

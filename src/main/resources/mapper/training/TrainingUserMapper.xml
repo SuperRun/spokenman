@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.training.TrainingUserMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.training.TrainingUser"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_training_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="trainingId != null">
+                training_id,
+            </if>
+            <if test="trainingName != null">
+                training_name,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="requiredScore != null">
+                required_score,
+            </if>
+            <if test="optionalScore != null">
+                optional_score,
+            </if>
+            <if test="certificateNo != null">
+                certificate_no,
+            </if>
+            <if test="certificatePhoto != null">
+                certificate_photo,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="userAreaId != null">
+                user_area_id,
+            </if>
+            <if test="userTypeId != null">
+                user_type_id,
+            </if>
+            <if test="userLevel != null">
+                user_level,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="trainingId != null">
+                #{trainingId},
+            </if>
+            <if test="trainingName != null">
+                #{trainingName},
+            </if>
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="userName != null">
+                #{userName},
+            </if>
+            <if test="requiredScore != null">
+                #{requiredScore},
+            </if>
+            <if test="optionalScore != null">
+                #{optionalScore},
+            </if>
+            <if test="certificateNo != null">
+                #{certificateNo},
+            </if>
+            <if test="certificatePhoto != null">
+                #{certificatePhoto},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="userAreaId != null">
+                #{userAreaId},
+            </if>
+            <if test="userTypeId != null">
+                #{userTypeId},
+            </if>
+            <if test="userLevel != null">
+                #{userLevel},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.training.TrainingUser">
+        SELECT *
+        FROM ota_training_user
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingUser">
+        SELECT *
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name = #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.training.TrainingUser"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name = #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.training.TrainingUser">
+        UPDATE ota_training_user
+        <set>
+            <if test="trainingId != null">
+                training_id = #{trainingId},
+            </if>
+            <if test="trainingName != null">
+                training_name = #{trainingName},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName},
+            </if>
+            <if test="requiredScore != null">
+                required_score = #{requiredScore},
+            </if>
+            <if test="optionalScore != null">
+                optional_score = #{optionalScore},
+            </if>
+            <if test="certificateNo != null">
+                certificate_no = #{certificateNo},
+            </if>
+            <if test="certificatePhoto != null">
+                certificate_photo = #{certificatePhoto},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="userAreaId != null">
+                user_area_id = #{userAreaId},
+            </if>
+            <if test="userTypeId != null">
+                user_type_id = #{userTypeId},
+            </if>
+            <if test="userLevel != null">
+                user_level = #{userLevel},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据查询条件获取(精确查询)，排除已删除 -->
+    <select id="listByFilterWithoutDeleted" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingUser">
+        SELECT *
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name = #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count，排除已删除 -->
+    <select id="countByFilterWithoutDeleted" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name = #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+    </select>
+
+
+    <!-- 根据搜索查询获取(模糊查询)，排除已删除 -->
+    <select id="listBySearchWithoutDeleted" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingUser">
+        SELECT *
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name LIKE #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索查询count，排除已删除 -->
+    <select id="countBySearchWithoutDeleted" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_training_user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="trainingName != null">
+                and training_name LIKE #{trainingName}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="certificateNo != null">
+                and certificate_no = #{certificateNo}
+            </if>
+            <if test="certificatePhoto != null">
+                and certificate_photo = #{certificatePhoto}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userAreaId != null">
+                and user_area_id = #{userAreaId}
+            </if>
+            <if test="userTypeId != null">
+                and user_type_id = #{userTypeId}
+            </if>
+            <if test="userLevel != null">
+                and user_level = #{userLevel}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+    </select>
+
+    <!-- 搜索筛选未参加培训的用户 -->
+    <select id="listUnselectedUserBySearch" parameterType="Map"
+        resultType="com.zust.itee.entity.user.User">
+        SELECT *
+        FROM ota_user
+        as user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgName != null">
+                and org_name LIKE #{orgName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and type != 0
+            and not exists(select * from ota_training_user where training_id = #{trainingId} and
+            user_id = user.id and status != -1)
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- count 未参加培训的用户 -->
+    <select id="countUnselectedUserBySearch" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_user
+        as user
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgName != null">
+                and org_name LIKE #{orgName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and type != 0
+            and not exists(select * from ota_training_user where training_id = #{trainingId} and
+            user_id = user.id and status != -1)
+        </trim>
+    </select>
+
+
+</mapper>
+

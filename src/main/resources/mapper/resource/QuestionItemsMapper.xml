@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.resource.QuestionItemsMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.resource.QuestionItems"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO tquestion_items
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="content != null">
+                content,
+            </if>
+            <if test="pic != null">
+                pic,
+            </if>
+            <if test="sequence != null">
+                sequence,
+            </if>
+            <if test="questionId != null">
+                question_id,
+            </if>
+            <if test="resourceQuestionId != null">
+                resource_question_id,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="content != null">
+                #{content},
+            </if>
+            <if test="pic != null">
+                #{pic},
+            </if>
+            <if test="sequence != null">
+                #{sequence},
+            </if>
+            <if test="questionId != null">
+                #{questionId},
+            </if>
+            <if test="resourceQuestionId != null">
+                #{resourceQuestionId},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.resource.QuestionItems">
+        SELECT *
+        FROM tquestion_items
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.QuestionItems">
+        SELECT *
+        FROM tquestion_items
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="content != null">
+                and content = #{content}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+            <if test="sequence != null">
+                and sequence = #{sequence}
+            </if>
+            <if test="questionId != null">
+                and question_id = #{questionId}
+            </if>
+            <if test="resourceQuestionId != null">
+                and resource_question_id = #{resourceQuestionId}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.resource.QuestionItems"
+        resultType="Long">
+        SELECT count(id)
+        FROM tquestion_items
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="content != null">
+                and content = #{content}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+            <if test="sequence != null">
+                and sequence = #{sequence}
+            </if>
+            <if test="questionId != null">
+                and question_id = #{questionId}
+            </if>
+            <if test="resourceQuestionId != null">
+                and resource_question_id = #{resourceQuestionId}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.resource.QuestionItems">
+        UPDATE tquestion_items
+        <set>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="pic != null">
+                pic = #{pic},
+            </if>
+            <if test="sequence != null">
+                sequence = #{sequence},
+            </if>
+            <if test="questionId != null">
+                question_id = #{questionId},
+            </if>
+            <if test="resourceQuestionId != null">
+                resource_question_id = #{resourceQuestionId},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+</mapper>
+

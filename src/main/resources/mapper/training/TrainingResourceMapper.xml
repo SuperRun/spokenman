@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.training.TrainingResourceMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.training.TrainingResource"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_training_resource
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="trainingId != null">
+                training_id,
+            </if>
+            <if test="resourceId != null">
+                resource_id,
+            </if>
+            <if test="resourceName != null">
+                resource_name,
+            </if>
+            <if test="required != null">
+                required,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="lecturerName != null">
+                lecturer_name,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="trainingId != null">
+                #{trainingId},
+            </if>
+            <if test="resourceId != null">
+                #{resourceId},
+            </if>
+            <if test="resourceName != null">
+                #{resourceName},
+            </if>
+            <if test="required != null">
+                #{required},
+            </if>
+            <if test="score != null">
+                #{score},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="lecturerName != null">
+                #{lecturerName},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.training.TrainingResource">
+        SELECT *
+        FROM ota_training_resource
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingResource">
+        SELECT *
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="resourceName != null">
+                and resource_name = #{resourceName}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.training.TrainingResource"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="resourceName != null">
+                and resource_name = #{resourceName}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.training.TrainingResource">
+        UPDATE ota_training_resource
+        <set>
+            <if test="trainingId != null">
+                training_id = #{trainingId},
+            </if>
+            <if test="resourceId != null">
+                resource_id = #{resourceId},
+            </if>
+            <if test="resourceName != null">
+                resource_name = #{resourceName},
+            </if>
+            <if test="required != null">
+                required = #{required},
+            </if>
+            <if test="score != null">
+                score = #{score},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="lecturerName != null">
+                lecturer_name = #{lecturerName},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    <!-- 根据查询条件获取(精确查询) 排除已删除-->
+    <select id="listByFilterWithoutDeleted" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingResource">
+        SELECT *
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count 排除已删除-->
+    <select id="countByFilterWithoutDeleted" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+    </select>
+
+    <select id="listBySearchWithoutDeleted" parameterType="Map"
+        resultType="com.zust.itee.entity.training.TrainingResource">
+        SELECT *
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="resourceName != null">
+                and resource_name LIKE #{resourceName}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="countBySearchWithoutDeleted" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_training_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainingId != null">
+                and training_id = #{trainingId}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="resourceName != null">
+                and resource_name LIKE #{resourceName}
+            </if>
+            <if test="required != null">
+                and required = #{required}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+    </select>
+
+    <select id="listUnselectedResource" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        as resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and ( org_id = #{orgId} or org_id = #{rootOrgId} )
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and NOT EXISTS(SELECT * FROM ota_training_resource where training_id = #{trainingId} and
+            resource_id = resource.id and status != -1)
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="countUnselectedResource" parameterType="Map"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource
+        as resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and ( org_id = #{orgId} or org_id = #{rootOrgId} )
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and NOT EXISTS(SELECT * FROM ota_training_resource where training_id = #{trainingId} and
+            resource_id = resource.id and status != -1)
+        </trim>
+    </select>
+
+</mapper>
+

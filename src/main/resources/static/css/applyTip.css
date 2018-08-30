@@ -1,0 +1,36 @@
+body{
+	background: #EFF0F4;
+}
+#tipTitle{
+	margin-left: 35%;
+	margin-top: 20%;
+}
+#tipTitle span{
+	font-size: 20px;
+	display: inline-block;
+	margin: -1px 8px;
+	letter-spacing:5px;
+	height: 31px;
+	line-height: 31px;
+}
+#tipContent{
+	margin-left: 35%;
+	margin-top: 2%;
+}
+#tipContent p{
+	font-size: 15px;
+	margin-top: 10px;
+	letter-spacing: 1px;
+}
+#tipContent a{
+	color: #09A8FA;
+}
+#tipContent a:hover{
+	color: #2E94B9;
+}
+#tipPic{
+	width: 50%;
+	height: 50%;
+	margin-top: 20%;
+	margin-left: -18%;
+}

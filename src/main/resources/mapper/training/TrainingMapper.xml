@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.training.TrainingMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.training.Training"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_training
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                name,
+            </if>
+            <if test="orgId != null">
+                org_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="requiredScore != null">
+                required_score,
+            </if>
+            <if test="optionalScore != null">
+                optional_score,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="signStartTime != null">
+                sign_start_time,
+            </if>
+            <if test="signEndTime != null">
+                sign_end_time,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="examId != null">
+                exam_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="pic != null">
+                pic,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="orgId != null">
+                #{orgId},
+            </if>
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="userName != null">
+                #{userName},
+            </if>
+            <if test="requiredScore != null">
+                #{requiredScore},
+            </if>
+            <if test="optionalScore != null">
+                #{optionalScore},
+            </if>
+            <if test="startTime != null">
+                #{startTime},
+            </if>
+            <if test="endTime != null">
+                #{endTime},
+            </if>
+            <if test="signStartTime != null">
+                #{signStartTime},
+            </if>
+            <if test="signEndTime != null">
+                #{signEndTime},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="examId != null">
+                #{examId},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="pic != null">
+                #{pic},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="startTime != null">
+                and start_time = #{startTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="signStartTime != null">
+                and sign_start_time = #{signStartTime}
+            </if>
+            <if test="signEndTime != null">
+                and sign_end_time = #{signEndTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.training.Training"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="requiredScore != null">
+                and required_score = #{requiredScore}
+            </if>
+            <if test="optionalScore != null">
+                and optional_score = #{optionalScore}
+            </if>
+            <if test="startTime != null">
+                and start_time = #{startTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="signStartTime != null">
+                and sign_start_time = #{signStartTime}
+            </if>
+            <if test="signEndTime != null">
+                and sign_end_time = #{signEndTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.training.Training">
+        UPDATE ota_training
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="orgId != null">
+                org_id = #{orgId},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName},
+            </if>
+            <if test="requiredScore != null">
+                required_score = #{requiredScore},
+            </if>
+            <if test="optionalScore != null">
+                optional_score = #{optionalScore},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="signStartTime != null">
+                sign_start_time = #{signStartTime},
+            </if>
+            <if test="signEndTime != null">
+                sign_end_time = #{signEndTime},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="examId != null">
+                exam_id = #{examId},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="pic != null">
+                pic = #{pic},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <!-- 根据搜索条件获取 -->
+    <select id="listBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count -->
+    <select id="countBySearch" parameterType="HashMap" resultType="Long">
+        SELECT count(id)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and status != -1
+        </trim>
+    </select>
+
+    <!-- 根据搜索条件获取已发布培训(未开始报名) -->
+    <select id="listReleasedBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 报名开始前 -->
+            <if test="now != null">
+                and sign_start_time &gt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 已发布培训(未开始报名) -->
+    <select id="countReleasedBySearch" parameterType="HashMap"
+        resultType="long">
+        SELECT count(id)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 报名开始前 -->
+            <if test="now != null">
+                and sign_start_time &gt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+    </select>
+
+    <!-- 根据搜索条件获取报名中培训 -->
+    <select id="listSignUpBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在报名时间内 -->
+            <if test="now != null">
+                and sign_start_time &lt;= #{now}
+            </if>
+            <if test="now != null">
+                and sign_end_time &gt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 报名中培训 -->
+    <select id="countSignUpBySearch" parameterType="HashMap"
+        resultType="long">
+        SELECT count(*)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在报名时间内 -->
+            <if test="now != null">
+                and sign_start_time &lt;= #{now}
+            </if>
+            <if test="now != null">
+                and sign_end_time &gt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+    </select>
+
+    <!-- 根据搜索条件获取待培训的培训 -->
+    <select id="listWaitingBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在报名结束及开始之间 -->
+            <if test="now != null">
+                and start_time &gt;= #{now}
+            </if>
+            <if test="now != null">
+                and sign_end_time &lt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 待培训的培训 -->
+    <select id="countWaitingBySearch" parameterType="HashMap" resultType="long">
+        SELECT count(*)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在报名结束及开始之间 -->
+            <if test="now != null">
+                and start_time &gt;= #{now}
+            </if>
+            <if test="now != null">
+                and sign_end_time &lt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+    </select>
+
+    <!-- 根据搜索条件获取培训中的培训 -->
+    <select id="listTrainingBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在开始及结束之间 -->
+            <if test="now != null">
+                and start_time &lt;= #{now}
+            </if>
+            <if test="now != null">
+                and end_time &lt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 培训中的培训 -->
+    <select id="countTrainingBySearch" parameterType="HashMap" resultType="long">
+        SELECT count(*)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在开始及结束之间 -->
+            <if test="now != null">
+                and start_time &lt;= #{now}
+            </if>
+            <if test="now != null">
+                and end_time &lt;= #{now}
+            </if>
+            and status != -1
+        </trim>
+
+    </select>
+
+    <!-- 根据搜索条件获取确认中的培训 -->
+    <select id="listConfirmingBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在结束后且未确认 -->
+            <if test="now != null">
+                and end_time &lt;= #{now}
+            </if>
+            and status != 6
+            and status != -1
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 确认中的培训 -->
+    <select id="countConfirmingBySearch" parameterType="HashMap" resultType="long">
+        SELECT count(*)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            <!-- 当前时间在结束后且未确认 -->
+            <if test="now != null">
+                and end_time &lt;= #{now}
+            </if>
+            and status != 6 and status != -1
+        </trim>
+    </select>
+
+    <!-- 根据搜索条件获取已完成培训 -->
+    <select id="listCompletedBySearch" parameterType="HashMap"
+        resultType="com.zust.itee.entity.training.Training">
+        SELECT *
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            and status = 6
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据搜索条件 count 已完成培训 -->
+    <select id="countCompletedBySearch" parameterType="HashMap" resultType="long">
+        SELECT count(*)
+        FROM ota_training
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="examId != null">
+                and exam_id = #{examId}
+            </if>
+            and status = 6
+        </trim>
+    </select>
+
+
+</mapper>
+

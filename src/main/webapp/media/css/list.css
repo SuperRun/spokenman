@@ -1,0 +1,18 @@
+.list .list_item{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    background: url("../images/list_item.png") no-repeat center left;
+}
+.list li{
+    border-bottom: 1px dashed #a1a1a1;
+}
+.time{
+    color: darkgrey;
+    font-size: 12px;
+    float: right;
+}
+.edit_btn{
+    float: right;
+    margin-left: 20px;
+}

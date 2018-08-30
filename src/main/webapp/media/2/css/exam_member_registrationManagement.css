@@ -1,0 +1,27 @@
+/*exam/member/registrationManagement start*/
+
+.car_company{
+    padding-left: 20px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #A2B4BA;
+}
+.car_company span{
+    margin-right: 20px;
+}
+.car_company input{
+    margin-left: 10px;
+}
+.user_item{
+    display: inline-block;
+    margin: 5px;
+    list-style: none;
+}
+input[type=checkbox]{
+    margin: -2px 5px 0px 5px;
+    vertical-align: middle;
+}
+.user_list{
+    border: 1px solid #A2B4BA;
+}
+/*exam/member/registrationManagement end*/

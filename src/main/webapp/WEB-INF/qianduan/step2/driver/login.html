@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+
+
+    <link href="../../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="../../css/common.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- 
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+     -->
+    <script src="../../js/jquery.1.9.js"></script>
+    <script src="../../js/jquery.form.js"></script>
+    <script src="../../js/jquery.validate.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script>
+        var path = "/driverhr";
+        var basePath = "http://localhost:8080/driverhr/";
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+
+
+    <title>浙江省散装水泥专用车辆驾驶员系统</title>
+    <script>
+        window.onload = function () {
+            var height = window.screen.height;
+            $('body').css('height', height);
+        };
+    </script>
+</head>
+<body>
+
+
+<div class="header" id="header">
+    <nav class="navbar navbar-default common_bg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand common_color">
+                    浙江省散装水泥专用车辆驾驶员系统
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container" id="content">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4" id="login">
+            <div class="login_row">
+                <div class="driverLogin-header"><h2>驾驶员登录</h2></div>
+                <div class="form-horizontal" id="login_form">
+                    <div class="form-group">
+                        <input type="text" class="form-control userName" id="username" placeholder="手机号">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control password" id="password" placeholder="密码/默认身份证后六位"
+                               value="123456">
+                    </div>
+                    <div class="form-group">
+                        <button id="loginBtn" class="btn btn-primary login_btn" style="width: 100%;">登录</button>
+                    </div>
+                </div>
+                <div id="login_error" style="display: none;">登录成功</div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+
+<!--footer start-->
+<div class="footer">
+    <a role="button" href="/driverhr/member/login" id="staffBtn"><img src="../../images/staff.png">员工登录</a>
+    <nav class="navbar navbar-default navbar-fixed-bottom common_bg" id="footer_navbar">
+        <div class="container common_color">
+            Copyright：
+        </div>
+    </nav>
+</div>
+<!--footer end-->
+
+</body>
+<script src="../../js/do/common.js"></script>
+<script src="../../js/do/driver/login.js"></script>
+</html>

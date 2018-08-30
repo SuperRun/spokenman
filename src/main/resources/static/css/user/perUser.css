@@ -1,0 +1,33 @@
+.search-bar{
+	width: 100%;
+	height: 82px;
+	margin-top: 12px;
+	line-height: 20%;
+	border:1px solid #ececec;
+	box-shadow: 0px 5px 5px #ececec;
+	border-radius: 5px;
+	background:#fff;
+}
+.search-bar-input{
+	height: 30px;
+	line-height: 30px;
+}
+.search-bar-label{
+	padding: 5px 15px;
+}
+.layui-input {
+	height: 30px;
+}
+.choose-area{
+	min-width: 30% !important;
+	margin-top: 2%;
+}
+#edit-per-user input,#add-per-user input{
+	height: 38px;
+}
+#search-info dl{
+	max-height:250px;
+}
+
+
+

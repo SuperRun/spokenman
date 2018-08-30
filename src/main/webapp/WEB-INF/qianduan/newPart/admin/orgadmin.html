@@ -1,0 +1,292 @@
+<!--散装办查看附属机构-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/orgadmin.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <title>组织管理-浙江省散装水泥专用车辆管理系统</title>
+</head>
+<body>
+
+    <!--header start-->
+    <div class="header" id="header">
+        <div class="side_nav">
+            <div class="user_nav">
+                <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false" id="su_user"><img src="../../images/user.png">杭州市级散装办<span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">查看用户信息</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">查看个人资料</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">退出账号</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-default common_bg">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand common_color">
+                        <img src="../../images/logo_default.png" class="logo_pic">
+                        浙江省散装水泥专用车辆驾驶员管理系统
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--header end-->
+
+    <!--menu start-->
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a href="#" class="start menu">首页</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">所有考试</a></li>
+                    <li><a href="#" class="sub_list">发布考试</a></li>
+                    <li><a href="#" class="sub_list">报名管理</a></li>
+                    <li><a href="#" class="sub_list">成绩录入</a></li>
+                    <li><a href="#" class="sub_list">证书录入</a></li>
+                    <li><a href="#" class="sub_list">统计报表</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">我的证书</a></li>
+            <li><a href="#" class="menu">软件下载</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">考试报名</a></li>
+                    <li><a href="#" class="sub_list">模拟考试</a></li>
+                    <li><a href="#" class="sub_list">我的考试</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">软件下载</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理</a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">考试报名</a></li>
+                    <li><a href="#" class="sub_list">模拟考试</a></li>
+                    <li><a href="#" class="sub_list">我的考试</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">软件下载</a></li>
+
+
+        </ul>
+    </nav>
+    <!--menu end-->
+
+    <!--main content start-->
+
+    <!--message start-->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-3">
+                <form class="attach_part" id="attach_part">
+                    <div id="tree" class="tree">
+                        <iframe id="iframeTree" name="content_frame" marginwidth=0 marginheight=0 width=99% height=100% src="../../organizationTree.html" frameborder=0  scrolling=YES></iframe>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-9">
+                <div class="block block-two">
+                    <!-- Default panel contents -->
+                    <div class="block-heading"><span>车企列表</span></div>
+                    <div class="block-body" >
+                        <div class="search_part text-center">
+                            <input type="text" aria-controls="" class="search_input" placeholder="驾驶员信息" id="search_text">
+                            <input type="button" class="search_btn" value="搜索" id="search_btn">
+                        </div>
+                        <div class="block_content">
+                            <table class="table table-striped">
+                                <thead>
+
+                                <tr>
+
+                                    <th class="text-center" style="cursor: pointer;">企业全称</th>
+
+                                    <th class="text-center" style="cursor: pointer;">所属县</th>
+
+                                    <th class="text-center" style="cursor: pointer;">所在地址</th>
+
+                                    <th class="text-center" style="cursor: pointer;">企业法人</th>
+
+                                    <th class="text-center" style="cursor: pointer;">分管领导</th>
+
+                                </tr>
+
+                                </thead>
+
+
+
+                                <tbody>
+
+                                <tr>
+
+                                    <td class="text-center"><a class="" href="#" data-toggle="modal" data-target="#companyInfo">杭州第一车企</a></td>
+
+                                    <td class="text-center">西湖区</td>
+
+                                    <td class="text-center">浙江省杭州市西湖区xxxxxxxxxxx</td>
+
+                                    <td class="text-center">张三</td>
+
+                                    <td class="text-center">李四</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center"><a class="" href="#">杭州第一车企</a></td>
+
+                                    <td class="text-center">西湖区</td>
+
+                                    <td class="text-center">浙江省杭州市西湖区xxxxxxxxxxx</td>
+
+                                    <td class="text-center">张三</td>
+
+                                    <td class="text-center">李四</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center"><a class="" href="#">杭州第一车企</a></td>
+
+                                    <td class="text-center">西湖区</td>
+
+                                    <td class="text-center">浙江省杭州市西湖区xxxxxxxxxxx</td>
+
+                                    <td class="text-center">张三</td>
+
+                                    <td class="text-center">李四</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center"><a class="" href="#">杭州第一车企</a></td>
+
+                                    <td class="text-center">西湖区</td>
+
+                                    <td class="text-center">浙江省杭州市西湖区xxxxxxxxxxx</td>
+
+                                    <td class="text-center">张三</td>
+
+                                    <td class="text-center">李四</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center"><a class="" href="#">杭州第一车企</a></td>
+
+                                    <td class="text-center">西湖区</td>
+
+                                    <td class="text-center">浙江省杭州市西湖区xxxxxxxxxxx</td>
+
+                                    <td class="text-center">张三</td>
+
+                                    <td class="text-center">李四</td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--message end-->
+
+    <!--companyInfo modal start-->
+    <div class="modal fade" id="companyInfo" tabindex="-1" role="dialog" aria-labelledby="companyInfoLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="companyInfoLabel">车企详细信息</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">企业全称：</label>
+                            <label class="col-sm-8 text_message">张三</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">企业简称：</label>
+                            <label class="col-sm-8 text_message">男</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">所属县：</label>
+                            <label class="col-sm-8 text_message">35</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">地址：</label>
+                            <label class="col-sm-8 text_message">17829716578</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">企业法人：</label>
+                            <label class="col-sm-8 text_message">张三</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">联系方式：</label>
+                            <label class="col-sm-8 text_message">17394738271</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">邮箱：</label>
+                            <label class="col-sm-8 text_message">xxxxx@163.com</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">分管领导：</label>
+                            <label class="col-sm-8 text_message">李四</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">联系方式：</label>
+                            <label class="col-sm-8 text_message">17829716578</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 text_title">邮箱：</label>
+                            <label class="col-sm-8 text_message">xxxxx@163.com</label>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--examInfo modal end-->
+
+    <!--main content end-->
+    <!--footer start-->
+    <div class="footer">
+        <nav class="navbar navbar-default common_bg" id="footer_navbar">
+            <div class="common_color">
+                Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+            </div>
+        </nav>
+    </div>
+    <!--footer end-->
+<script>
+    window.onload = function () {
+        var height = $("#attach_part").height()+20>$(".content .row .col-md-9").height()?$("#attach_part").height()+20:$(".content .row .col-md-9").height();
+        height=height>document.body.clientHeight-228?height:document.body.clientHeight-228;
+        $(".content .row .col-md-3").css("height",height);
+    };
+</script>
+</body>
+</html>

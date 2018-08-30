@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.resource.LearningResourceMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.resource.LearningResource"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_learning_resource
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                name,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="lecturerId != null">
+                lecturer_id,
+            </if>
+            <if test="lecturerName != null">
+                lecturer_name,
+            </if>
+            <if test="orgId != null">
+                org_id,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="authType != null">
+                auth_type,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="pic != null">
+                pic,
+            </if>
+            <if test="duration != null">
+                duration,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="url != null">
+                #{url},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="lecturerId != null">
+                #{lecturerId},
+            </if>
+            <if test="lecturerName != null">
+                #{lecturerName},
+            </if>
+            <if test="orgId != null">
+                #{orgId},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="userName != null">
+                #{userName},
+            </if>
+            <if test="score != null">
+                #{score},
+            </if>
+            <if test="authType != null">
+                #{authType},
+            </if>
+            <if test="time != null">
+                #{time},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="pic != null">
+                #{pic},
+            </if>
+            <if test="duration != null">
+                #{duration},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="lecturerId != null">
+                and lecturer_id = #{lecturerId}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="authType != null">
+                and auth_type = #{authType}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+            <if test="duration != null">
+                and duration = #{duration}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.resource.LearningResource"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="lecturerId != null">
+                and lecturer_id = #{lecturerId}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name = #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName}
+            </if>
+            <if test="score != null">
+                and score = #{score}
+            </if>
+            <if test="authType != null">
+                and auth_type = #{authType}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="pic != null">
+                and pic = #{pic}
+            </if>
+            <if test="duration != null">
+                and duration = #{duration}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.resource.LearningResource">
+        UPDATE ota_learning_resource
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="lecturerId != null">
+                lecturer_id = #{lecturerId},
+            </if>
+            <if test="lecturerName != null">
+                lecturer_name = #{lecturerName},
+            </if>
+            <if test="orgId != null">
+                org_id = #{orgId},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName},
+            </if>
+            <if test="score != null">
+                score = #{score},
+            </if>
+            <if test="authType != null">
+                auth_type = #{authType},
+            </if>
+            <if test="time != null">
+                time = #{time},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="pic != null">
+                pic = #{pic},
+            </if>
+            <if test="duration != null">
+                duration = #{duration},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="listBySearch" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+
+    <select id="countBySearch" parameterType="Map"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+    <select id="listBySearchAndOrg" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and (org_id = #{orgId} or org_id = #{rootOrgId})
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+
+    <select id="countBySearchAndOrg" parameterType="Map"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and (org_id = #{orgId} or org_id = #{rootOrgId})
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+    <select id="listBySearchAndAuth" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResource">
+        SELECT *
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and (auth_type = #{allAuth} or (auth_type = #{exclude_sub} and level &lt;=
+            #{userLevel}))
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+
+    <select id="countBySearchAndAuth" parameterType="Map"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="lecturerName != null">
+                and lecturer_name LIKE #{lecturerName}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="userName != null">
+                and user_name LIKE #{userName}
+            </if>
+            <if test="startTime != null">
+                and create_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and create_time &lt;= #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            and (auth_type = #{allAuth} or (auth_type = #{excludeSub} and level &lt;=
+            #{userLevel}))
+        </trim>
+    </select>
+
+
+</mapper>
+

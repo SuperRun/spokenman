@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="css/jquery-ui.min.css" type="text/css" rel="stylesheet"/>
+    <link href="bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript"
+            src="bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js"></script>
+    <title></title>
+
+</head>
+<body>
+<div class="kaoshi-wapper">
+    <div class="info-up">
+        <div class="infoup-left">
+            <fieldset class="kaochang-info">
+                <legend>理论考试</legend>
+                <span>第01考台</span></fieldset>
+            <fieldset class="kaosheng-info">
+                <legend>考生信息</legend>
+                <div><img src="http://web.resource.mucang.cn/jiakaobaodian.web/jkbd-app/resources/images/diandian.png">
+
+                    <p class="name">考生姓名：<span class="nickname ellipsis">我是车神</span></p>
+
+                    <p>考试题数：100题</p>
+
+                    <p>考试时间：45分钟</p>
+
+                    <p>合格标准：满分100分</p>
+
+                    <p class="ll">90及格</p></div>
+            </fieldset>
+        </div>
+        <div class="infoup-center">
+            <fieldset class="kaochang-main">
+                <legend>考试题目</legend>
+                <div class="timu-container" data-item="shiti-container"></div>
+                <div class="media-container float-l" data-item="media-container"></div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="info-middle cl">
+        <fieldset class="time-info float-l">
+            <legend>剩余时间</legend>
+            <span data-item="left-time">45:00</span></fieldset>
+        <fieldset class="tip-container float-l">
+            <legend>提示信息</legend>
+            <div class="tip-content" data-item="tip-content"></div>
+        </fieldset>
+        <div class="fun-btns cl float-l">
+            <button type="button" class="option-btn first-c bd_3blue float-l" data-item="prev">上一题</button>
+            <button type="button" class="xiayiti option-btn bd_3blue float-l" data-item="next">下一题</button>
+            <button type="button" class="jiaojuan option-btn float-r" data-item="jiaojuan">交卷</button>
+        </div>
+    </div>
+    <div class="cl">
+        <div class="float-l">
+            <script type="text/javascript">var cpro_id = 'u2598188';</script>
+            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+        </div>
+    </div>
+    <div class="info-down" style="padding-top: 0;">
+        <fieldset class="">
+            <legend>答题信息</legend>
+            <div class="datika-container" data-item="datika-container"></div>
+        </fieldset>
+    </div>
+</div>
+
+<a class="totop" data-item="toTop">返回顶部</a>
+
+<script>
+    for(var i=0;i<menu.length;i++){
+        menu[i].onclick = function () {
+            var sub_menu = $(this).next();
+            for(var j=0;j<menu.length;j++){
+                if(j!=i){
+                    $(menu[j]).removeClass("a_hover");
+                    $(menu[j]).next().hide();
+                }
+
+            }
+            $(this).addClass("a_hover");
+
+            if(sub_menu.css("display")=="none"){
+                sub_menu.show();
+            }else if(sub_menu.css("display")!="none"){
+                sub_menu.hide();
+            }
+
+        }
+    }
+    function clickClass(list,className){
+        for(var i=0;i<list.length;i++){
+            list[i].onclick = function () {
+                for(var j=0;j<list.length;j++){
+                    if(j!=i){
+                        $(list[j]).removeClass(className);
+                    }
+
+                }
+                $(this).addClass(className);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

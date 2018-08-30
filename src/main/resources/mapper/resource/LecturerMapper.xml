@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.resource.LecturerMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.resource.Lecturer"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_lecturer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="introduction != null">
+                introduction,
+            </if>
+            <if test="orgId != null">
+                org_id,
+            </if>
+            <if test="areaId != null">
+                area_id,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="startTime != null">
+                #{startTime},
+            </if>
+            <if test="endTime != null">
+                #{endTime},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="introduction != null">
+                #{introduction},
+            </if>
+            <if test="orgId != null">
+                #{orgId},
+            </if>
+            <if test="areaId != null">
+                #{areaId},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.resource.Lecturer">
+        SELECT *
+        FROM ota_lecturer
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.Lecturer">
+        SELECT *
+        FROM ota_lecturer
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="startTime != null">
+                and start_time = #{startTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="introduction != null">
+                and introduction = #{introduction}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter" parameterType="com.zust.itee.entity.resource.Lecturer"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_lecturer
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="startTime != null">
+                and start_time = #{startTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="introduction != null">
+                and introduction = #{introduction}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.resource.Lecturer">
+        UPDATE ota_lecturer
+        <set>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction},
+            </if>
+            <if test="orgId != null">
+                org_id = #{orgId},
+            </if>
+            <if test="areaId != null">
+                area_id = #{areaId},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 搜索 -->
+    <select id="listBySearch" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.Lecturer">
+        SELECT *
+        FROM ota_lecturer
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="countBySearch" parameterType="com.zust.itee.entity.resource.Lecturer"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_lecturer
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="name != null">
+                and name LIKE #{name}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="orgId != null">
+                and org_id = #{orgId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </trim>
+    </select>
+
+</mapper>
+

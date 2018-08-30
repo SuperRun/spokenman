@@ -1,0 +1,58 @@
+[{
+  "title": "浙江省散装办",
+  "isFolder": true,
+  "key": "folder2",
+  "expand": true,
+  "icon": "bulk.png",
+  "children": [{
+    "title": "杭州散装办",
+    "children": [{
+      "title": "西湖区散装办",
+      "children": [{
+        "title": "西湖区第一车企",
+        "icon": "carCompany.png"
+      }],
+      "icon": "bulk.png"
+    },{
+      "title": "余杭区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "上城区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "下城区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "江干区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "拱墅区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "滨江区散装办",
+      "icon": "bulk.png"
+    }, {
+      "title": "萧山区散装办",
+      "icon": "bulk.png"
+    }],
+    "icon": "bulk.png"
+  }, {
+    "title": "宁波市散装办",
+    "children": [{
+      "title": "宁波市第一车企",
+      "icon": "carCompany.png"
+    }],
+    "icon": "bulk.png"
+  }, {
+    "title": "绍兴市散装办",
+    "children": [{
+      "title": "绍兴市第一车企",
+      "icon": "carCompany.png"
+    },{
+      "title": "绍兴市第二车企",
+      "icon": "carCompany.png"
+    }
+    ],
+    "icon": "bulk.png"
+  }]
+}]

@@ -1,0 +1,28 @@
+
+/*hr/driver/driverInfo start*/
+.message_detail{
+    display: none;
+}
+#staffDetailInfo{
+    margin-top: 20px;
+}
+a{
+ text-decoration: none;
+}
+.block a:hover,a:active,a:link,a:focus,a:visited{
+    text-decoration: none;
+}
+.table_driver>tbody>tr:first-child{
+    background-color: #82ABBA;
+    font-weight: bold;
+}
+#IDcard img{
+    width: 350px;
+    height: 200px;
+}
+.show-up{
+    float: right;
+    margin-right: 35px;
+    cursor: pointer;
+}
+/*hr/driver/driverInfo end*/

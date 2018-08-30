@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zust.itee.mapper.resource.LearningResourceQuestionMapper">
+
+    <!-- 插入  -->
+    <insert id="save" parameterType="com.zust.itee.entity.resource.LearningResourceQuestion"
+        useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO ota_learning_resource_question
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="resourceId != null">
+                resource_id,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="answer != null">
+                answer,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+            <if test="pic1 != null">
+                pic1,
+            </if>
+            <if test="pic2 != null">
+                pic2,
+            </if>
+            <if test="pic3 != null">
+                pic3,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="status != null">
+                status
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="resourceId != null">
+                #{resourceId},
+            </if>
+            <if test="content != null">
+                #{content},
+            </if>
+            <if test="answer != null">
+                #{answer},
+            </if>
+            <if test="time != null">
+                #{time},
+            </if>
+            <if test="pic1 != null">
+                #{pic1},
+            </if>
+            <if test="pic2 != null">
+                #{pic2},
+            </if>
+            <if test="pic3 != null">
+                #{pic3},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="status != null">
+                #{status}
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 根据id获取  -->
+    <select id="getById" parameterType="int"
+        resultType="com.zust.itee.entity.resource.LearningResourceQuestion">
+        SELECT *
+        FROM ota_learning_resource_question
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据查询条件获取(精确查询) -->
+    <select id="listByFilter" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResourceQuestion">
+        SELECT *
+        FROM ota_learning_resource_question
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="content != null">
+                and content LIKE #{content}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="answer != null">
+                and answer=#{answer}
+            </if>
+            <if test="pic1 != null">
+                and pic1=#{pic1}
+            </if>
+            <if test="pic2 != null">
+                and pic2=#{pic2}
+            </if>
+            <if test="pic3 != null">
+                and pic3=#{pic3}
+            </if>
+            <if test="typeId != null">
+                and type_id=#{typeId}
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count -->
+    <select id="countByFilter"
+        parameterType="com.zust.itee.entity.resource.LearningResourceQuestion"
+        resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource_question
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="content != null">
+                and content LIKE #{content}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="answer != null">
+                and answer = #{answer}
+            </if>
+            <if test="pic1 != null">
+                and pic1 = #{pic1}
+            </if>
+            <if test="pic2 != null">
+                and pic2 = #{pic2}
+            </if>
+            <if test="pic3 != null">
+                and pic3 = #{pic3}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+        </trim>
+    </select>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.zust.itee.entity.resource.LearningResourceQuestion">
+        UPDATE ota_learning_resource_question
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="resourceId != null">
+                resource_id = #{resourceId},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="time != null">
+                time = #{time},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="answer != null">
+                answer=#{answer},
+            </if>
+            <if test="pic1 != null">
+                pic1=#{pic1},
+            </if>
+            <if test="pic2 != null">
+                pic2=#{pic2},
+            </if>
+            <if test="pic3 != null">
+                pic3=#{pic3},
+            </if>
+            <if test="typeId != null">
+                type_id=#{typeId}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <!-- 根据查询条件获取(精确查询)，排除已删除 -->
+    <select id="listByFilterWithoutDeleted" parameterType="Map"
+        resultType="com.zust.itee.entity.resource.LearningResourceQuestion">
+        SELECT *
+        FROM ota_learning_resource_question
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="content != null">
+                and content LIKE #{content}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="answer != null">
+                and answer=#{answer}
+            </if>
+            <if test="pic1 != null">
+                and pic1=#{pic1}
+            </if>
+            <if test="pic2 != null">
+                and pic2=#{pic2}
+            </if>
+            <if test="pic3 != null">
+                and pic3=#{pic3}
+            </if>
+            <if test="typeId != null">
+                and type_id=#{typeId}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!-- 根据精确查询count，排除已删除  -->
+    <select id="countByFilterWithoutDeleted" parameterType="Map" resultType="Long">
+        SELECT count(id)
+        FROM ota_learning_resource_question
+        <trim prefix="where" prefixOverrides="and " suffixOverrides=",">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="resourceId != null">
+                and resource_id = #{resourceId}
+            </if>
+            <if test="content != null">
+                and content LIKE #{content}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="answer != null">
+                and answer = #{answer}
+            </if>
+            <if test="pic1 != null">
+                and pic1 = #{pic1}
+            </if>
+            <if test="pic2 != null">
+                and pic2 = #{pic2}
+            </if>
+            <if test="pic3 != null">
+                and pic3 = #{pic3}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            and status != #{deletedStatus}
+        </trim>
+    </select>
+
+</mapper>
+

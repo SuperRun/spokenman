@@ -1,0 +1,205 @@
+/*formPaper start*/
+#modality_part{
+    display: none;
+}
+#top_setting{
+    height: 20px;
+}
+.range{
+    font-weight: bold;
+    color: #337ab7;
+}
+.percent{
+    margin-right: 6px;
+}
+#paper_content{
+    margin-top: 20px;
+}
+#count{
+    color: #666;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #e5eaf2;
+
+}
+#count label{
+    padding: 0 5px;
+    color: #f9690e;
+    margin-bottom: 0;
+}
+.heading_right{
+    float: right;
+    height: 37px;
+}
+
+.list_header{
+    height: 35px;
+    line-height: 35px;
+    background-color: #e4e7ea;
+}
+.list_body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    padding: 0;
+    height: calc(100% - 30px);
+
+}
+.list_body .list_item{
+    height: 42px;
+    background-color: #f5f7fa;
+    transition: background-color 0.1s linear;
+}
+
+.topic{
+    color: #337ab7;
+    height: 42px;
+    line-height: 42px;
+    border-left: 3px solid transparent;
+    transition:  border-left-color 0.1s linear;
+    cursor: pointer;
+}
+.topic_click{
+    border-left: 3px solid #337ab7;!important;
+}
+.text{
+    height: 34px;
+    width: 60px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0px 5px;
+}
+.text_field{
+    padding: 4px 15px;
+    vertical-align: middle;
+    height: 100%;
+}
+.classify_list{
+    background-color: #ffffff;
+    list-style: none;
+    padding: 0px;
+    display: none;
+}
+
+.classify_item{
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px dotted #e6e6e6;
+    cursor: pointer;
+}
+.classify{
+    padding-left: 30px;
+}
+#step2{
+    display: none;
+}
+#message_top{
+    height: 40px;
+    line-height: 40px;
+}
+#passInfo{
+    clear: both;
+    margin: 10px 0px;
+    height: auto;
+    zoom: 1;
+    overflow: hidden;
+}
+#passInfo .col-md-5{
+    height: 34px;
+    line-height: 34px;
+}
+#passInfo .radio_group{
+    margin-top: 10px;
+}
+#passing_score{
+    display: none;
+}
+#message_top .message_num{
+    color: #f9690e;
+    margin: 0px 10px;
+}
+#paper_type{
+    width: 60%;
+    display: inline-block;
+}
+#message_content{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+.text_area{
+    border: 2px dashed #e6e6e6;
+    border-radius: 4px;
+    margin: 10px 0px;
+    padding: 10px 18px;
+    line-height: 20px;
+    color: #656D78;
+    max-height: 200px;
+}
+#go_back{
+    width: 180px;
+    float: right;
+}
+
+.paper_btn{
+    width: 180px;
+    margin: 10px auto;
+}
+.spinner {
+    width: 60px;
+}
+.spinner input {
+    text-align: right;
+}
+.input-group{
+    display: inline-table;
+}
+.input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+}
+.input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+}
+.input-group-btn-vertical > .btn:first-child {
+    border-top-right-radius: 4px;
+}
+.input-group-btn-vertical > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+}
+.input-group-btn-vertical i{
+    position: absolute;
+    top: 0;
+    left: 1px;
+}
+#paperPreview{
+    display: none;
+}
+/*formPaper end*/
+.block-heading span label{
+    font-weight: normal;
+    padding-left: 6px;
+}
+.block-heading{
+    clear: both;
+}

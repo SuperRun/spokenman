@@ -1,0 +1,268 @@
+#notices{
+    min-height: 620px;
+    margin-bottom: 30px;
+}
+.settings-cont {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.settings-cont .setting-left {
+    width: 216px;
+    background-color: #f8fafc;
+    min-height: 598px;
+}
+.l {
+    float: left;
+}
+.settings-cont .setting-left .avator-wapper {
+    padding: 32px 0 24px;
+}
+.settings-cont .setting-left .avator-mode {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 4px solid #d9dde1;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+.settings-cont .setting-left .avator-mode .update-avator {
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+.settings-cont .setting-left .avator-mode .update-avator p {
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    line-height: 30px;
+}
+.settings-cont .setting-left .avator-mode .update-avator a {
+    color: inherit;
+}
+.settings-cont .setting-left .des-mode {
+    font-size: 16px;
+    text-align: center;
+}
+.settings-cont .setting-left .des-mode p {
+    line-height: 44px;
+    width: 160px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.settings-cont .setting-left .des-mode .auth-list dd {
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    padding-top: 2.5px;
+    margin-right: 12px;
+    color: #a9adb2;
+}
+.settings-cont .setting-left .des-mode .auth-list dd .icon-tips {
+    position: absolute;
+    width: 120px;
+    line-height: 30px;
+    left: 50%;
+    margin-left: -60px;
+    bottom: -36px;
+    font-size: 12px;
+    color: #4d555d;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 1px 2px #cccecf;
+}
+.settings-cont .setting-left .des-mode .auth-list dd .icon-tips .triangle_border_up {
+    width: 0;
+    height: 0;
+    border-width: 0 6px 7px;
+    border-style: solid;
+    border-color: transparent transparent #efefef;
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    top: -7px;
+}
+.settings-cont .setting-left .list-wapper {
+    overflow: hidden;
+}
+.settings-cont .setting-left .list-wapper h2 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 12px 24px;
+    font-weight: 700;
+}
+.settings-cont .setting-left .list-wapper .line {
+    height: 1px;
+    background-color: #d9dde1;
+    margin: 0 24px;
+}
+.settings-cont .setting-left .list-wapper .menu {
+    padding: 10px 0 25px;
+    width: 216px;
+    background-color: #f8fafc;
+}
+.settings-cont .setting-left .list-wapper .menu a {
+    display: block;
+    position: relative;
+    padding: 0 0 0 54px;
+    height: 48px;
+    line-height: 48px;
+    transition: background-color .3s ease;
+    color: #1c1f21;
+
+}
+.settings-cont .setting-left .list-wapper .menu a.on {
+    background-color: #393D49;
+}
+
+.settings-cont .setting-left .list-wapper .menu a .arr {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #b5b9bc;
+}
+.settings-cont .setting-left .list-wapper .menu a.on .arr {
+    color: #fff;
+}
+.settings-cont .setting-right {
+    float: left;
+    padding:30px 48px 0 48px;
+    width: 984px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.settings-cont .setting-right-wrap {
+    min-height: 568px;
+}
+.setting-right-wrap {
+    padding: 0!important;
+}
+.common-title {
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.common-title .title-tips {
+    font-size: 12px;
+    color: #93999f;
+    margin-left: 18px;
+    font-weight: 400;
+}
+.color-red {
+    color: #EF1300!important;
+}
+.common-title a {
+    color: #93999f;
+    font-weight: 400;
+    font-size: 14px;
+}
+.page-settings .common-title a {
+    font-size: 12px;
+}
+.line {
+    height: 1px;
+    background-color: #d0d6d9;
+    margin-top: 12px;
+}
+.page-settings .layui-upload-img {
+    width: 92px;
+    height: 92px;
+    margin: 0 10px 10px 0;
+}
+.page-settings .setting .bingd .itemBox {
+    height: 88px;
+    overflow: hidden;
+    margin: auto;
+    border-bottom: 1px solid #d9dde1;
+}
+.page-settings .setting .bingd .itemBox .left {
+    width: 60px;
+    float: left;
+    font-size: 36px;
+    color: #d9dde1;
+    line-height: 98px;
+    padding-left: 24px;
+}
+.page-settings .setting .bingd .itemBox .left i{
+    font-size: 36px;
+    color: #d9dde1;
+    line-height: 98px;
+
+}
+
+.page-settings .setting .bingd .itemBox .center {
+    padding-top: 22px;
+    width: 510px;
+    float: left;
+}
+.page-settings .setting .bingd .itemBox .font1 {
+    color: #2b333b;
+    font-size: 16px;
+    font-weight: 700;
+}
+.page-settings .setting .bingd .itemBox .font3 {
+    color: #2b333b;
+    font-size: 14px;
+}
+.page-settings .setting .bingd .itemBox p {
+    line-height: 24px;
+    font-size: 12px;
+}
+.page-settings .setting .bingd .itemBox .font2 {
+    color: #93999f;
+    font-size: 14px;
+}
+.page-settings .setting .bingd .itemBox .right {
+    float: right;
+    padding-right: 12px;
+    margin-top: 28px;
+}
+.page-settings .setting .bingd .itemBox .right .moco-btn-normal {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.moco-btn-normal:link, .moco-btn-normal:visited {
+    color: #545c63;
+}
+.page-settings .setting .bingd .bb0 {
+    border-bottom: 0!important;
+}
+.page-settings .setting .bingd .h380 {
+    height: 190px!important;
+}
+.pr-avator .avator-mode {
+    margin-top: 50px;
+    width: 192px;
+    height: 192px;
+    background-color: #d9dde1;
+    text-align: center;
+    border: 4px solid #d9dde1;
+    border-radius: 96px;
+    overflow: hidden;
+}
+.pr-avator .layui-upload a {
+    cursor: pointer;
+    color: #0077c8;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+.pr-btn{
+    margin-top: 60px;
+
+}
+.pr-btn a{
+    margin-left: 20px;
+    border-radius: 50px;
+}
+

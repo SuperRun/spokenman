@@ -1,0 +1,4 @@
+.table_driver>tbody>tr:first-child{
+    background-color: #82ABBA;
+    font-weight: bold;
+}

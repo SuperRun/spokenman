@@ -1,0 +1,53 @@
+
+/*orgInfo start*/
+.text_title{
+    margin-top: 8px;
+}
+.control-answer{
+    padding-top: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #337ab7;
+    word-wrap: break-word;
+}
+#carCompany a{
+    margin-left: 20px;
+}
+.btn-table{
+    margin-right: 5px;
+    margin-left: 0;
+}
+.scanner_pic{
+    width: 100px;
+    height: auto;
+}
+.table_info>tbody>tr>td{
+    vertical-align: middle;
+}
+.functionGroup>input[type='button']{
+    margin: 10px 0;
+}
+.functionGroup input[type='text']{
+    width: 80%;
+    line-height: 37px;
+    height: 37px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.fail_part{
+    margin: 10px 0;
+}
+.fail_part>input[type='button']{
+    margin-top: -3px;
+}
+/*orgInfo end*/

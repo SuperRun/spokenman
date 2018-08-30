@@ -1,0 +1,11 @@
+/*indexOrg start*/
+.pagination *{
+    vertical-align: middle;
+}
+.modal-footer{
+    clear: both;
+}
+.moreInfo_part{
+    display: none;
+}
+/*indexOrg end*/

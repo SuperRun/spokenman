@@ -1,0 +1,414 @@
+<!--证书手动录入-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/star_claim.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-filestyle.min.js"></script>
+    <title>理赔认定-浙江省散装水泥专用车辆驾驶员管理系统</title>
+</head>
+<body>
+<!--header start-->
+<div class="header" id="header">
+    <div class="side_nav">
+        <div class="user_nav">
+            <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false" id="su_user"><img src="../../images/user.png">杭州市级散装办<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">查看用户信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">查看个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出账号</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-default common_bg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand common_color">
+                    <img src="../../images/logo_default.png" class="logo_pic">
+                    浙江省散装水泥专用车辆驾驶员管理系统
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--header end-->
+
+<!--menu start-->
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="#" class="start menu">首页</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">培训管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">所有培训</a></li>
+                <li><a href="#" class="sub_list">发布培训</a></li>
+                <li><a href="#" class="sub_list">报名管理</a></li>
+                <li><a href="#" class="sub_list">成绩录入</a></li>
+                <li><a href="#" class="sub_list">证书录入</a></li>
+                <li><a href="#" class="sub_list">统计报表</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">我的证书</a></li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理</a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+
+
+    </ul>
+</nav>
+<!--menu end-->
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="attach_part" id="attach_part">
+                <div class="attach-heading"><span>星级管理</span></div>
+                <div class="attach-body">
+                    <ul class="ul-list">
+                        <li><a href="#" class="list_item">星级规则管理</a></li>
+                        <li><a href="#" class="list_item">星级类型管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="block block-two">
+                <!-- Default panel contents -->
+                <div class="block-heading"><span>理赔认定</span></div>
+                <div class="block-body">
+                    <div id="pb_top">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="search_part text-center col-md-6">
+                            <input type="text" aria-controls="" class="search_input" placeholder="驾驶员信息" id="search_text">
+                            <input type="button" class="search_btn" value="搜索" id="search_btn">
+                        </div>
+                    </div>
+                    <div id="pb_content">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+
+                            <tr>
+
+                                <th class="text-center" style="cursor: pointer;">保险公司名称</th>
+
+                                <th class="text-center" style="cursor: pointer;">车辆号牌</th>
+
+                                <th class="text-center" style="cursor: pointer;">理赔费用</th>
+
+                                <th class="text-center" style="cursor: pointer;">事故时间</th>
+
+                                <th class="text-center" style="cursor: pointer;">操作</th>
+
+                            </tr>
+
+                            </thead>
+
+
+
+                            <tbody>
+
+                            <tr>
+                                <td class="text-center">太平洋保险公司</td>
+
+                                <td class="text-center">浙A 23738</td>
+
+                                <td class="text-center"><a data-toggle="modal" data-target="#detail_Modal" href="#">5000元</a></td>
+
+                                <td class="text-center">2016-08-12</td>
+
+                                <td class="text-center">
+                                    <button class="btn-custom btn-long" data-toggle="modal" data-target="#claimingModal">认定责任人</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">太平洋保险公司</td>
+
+                                <td class="text-center">浙A 23738</td>
+
+                                <td class="text-center"><a data-toggle="modal" data-target="#detail_Modal" href="#">5000元</a></td>
+
+                                <td class="text-center">2016-08-12</td>
+
+                                <td class="text-center">
+                                    <button class="btn-custom btn-long" data-toggle="modal" data-target="#claimingModal">认定责任人</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">太平洋保险公司</td>
+
+                                <td class="text-center">浙A 23738</td>
+
+                                <td class="text-center"><a data-toggle="modal" data-target="#detail_Modal" href="#">5000元</a></td>
+
+                                <td class="text-center">2016-08-12</td>
+
+                                <td class="text-center">
+                                    <button class="btn-custom btn-long" data-toggle="modal" data-target="#claimingModal">认定责任人</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">太平洋保险公司</td>
+
+                                <td class="text-center">浙A 23738</td>
+
+                                <td class="text-center"><a data-toggle="modal" data-target="#detail_Modal" href="#">5000元</a></td>
+
+                                <td class="text-center">2016-08-12</td>
+
+                                <td class="text-center">
+                                    <button class="btn-custom btn-long" data-toggle="modal" data-target="#claimingModal">认定责任人</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">太平洋保险公司</td>
+
+                                <td class="text-center">浙A 23738</td>
+
+                                <td class="text-center"><a data-toggle="modal" data-target="#detail_Modal" href="#">5000元</a></td>
+
+                                <td class="text-center">2016-08-12</td>
+
+                                <td class="text-center">
+                                    <button class="btn-custom btn-long" data-toggle="modal" data-target="#claimingModal">认定责任人</button>
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--message end-->
+<!--scanner modal start-->
+<div class="modal fade" id="detail_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="detail_ModalLabel">认定责任人</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal form_detail">
+                    <div class="form-group">
+                        <label class="text_title">保险公司名称：</label>
+                        <label class="text_message">太平洋保险公司</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">车辆号牌：</label>
+                        <label class="col-sm-8 text_message">浙A 23474</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">理赔费用：</label>
+                        <label class="col-sm-8 text_message">5000元</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">事故时间：</label>
+                        <label class="col-sm-8 text_message">2016-08-12</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">受伤人数：</label>
+                        <label class="col-sm-8 text_message">2</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">死亡人数：</label>
+                        <label class="col-sm-8 text_message">0</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">理赔录入时间：</label>
+                        <label class="col-sm-8 text_message">2016-10-01</label>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--scanner modal end-->
+
+<div class="modal fade" id="claimingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="claimingModalLabel">认定责任人</h4>
+            </div>
+            <div class="modal-body">
+
+                <ul class="user_list">
+                    <div class="car_company"><span>xx车企</span></div>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                    <li class="user_item"><input type="radio" class="select_user" name="select_user">张三</li>
+                </ul>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">数据1：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>直行
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>转弯
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">数据2：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>制动前
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>制动后
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">数据3：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>空车
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>重车
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">数据4：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>晴天
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>雨雪天
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">数据5：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>超速
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>正常
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="text_title">交通违法类型：</label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" checked="checked" value="0"/>红灯
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="1"/>违法停车
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="2"/>超速
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="3"/>逆向行驶
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="radio detail_infoRadio" value="4"/>其他
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-middle" id="commit_btn">提交</button>
+                <button type="button" class="btn btn-default btn-middle" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--main content end-->
+<!--footer start-->
+<div class="footer">
+    <nav class="navbar navbar-default common_bg" id="footer_navbar">
+        <div class="common_color">
+            Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+        </div>
+    </nav>
+</div>
+<!--footer end-->
+
+<script>
+    window.onload = function () {
+        var height = $("#attach_part").height()+20>$(".content .row .col-md-9").height()?$("#attach_part").height()+20:$(".content .row .col-md-9").height();
+        height=height>document.body.clientHeight-228?height:document.body.clientHeight-228;
+        $(".content .row .col-md-3").css("height",height);
+    };
+    $("#commit_btn").on('click',function () {
+        var parent_div = $(this).parent();
+        $(this).hide(200);
+        var btn =  $('<button>确定</button>').appendTo($(parent_div));
+        btn.addClass('btn').addClass('btn-success').addClass('btn-middle');
+
+    });
+</script>
+</body>
+</html>

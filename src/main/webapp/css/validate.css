@@ -1,0 +1,4 @@
+@charset "utf-8";
+.error{color:#C00; padding-left:6px;}
+input.error{outline-color:red}
+span.error{color:#C00; padding-left:6px;}

@@ -1,0 +1,320 @@
+<!--散装办查看附属机构-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/driverarchiveadmin.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <title>驾驶员档案-浙江省散装水泥专用车辆管理系统</title>
+</head>
+<body>
+
+    <!--header start-->
+    <div class="header" id="header">
+        <div class="side_nav">
+            <div class="user_nav">
+                <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false" id="su_user"><img src="../../images/user.png">杭州市级散装办<span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">查看用户信息</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">查看个人资料</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">退出账号</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-default common_bg">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand common_color">
+                        <img src="../../images/logo_default.png" class="logo_pic">
+                        浙江省散装水泥专用车辆驾驶员管理系统
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--header end-->
+
+    <!--menu start-->
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a href="#" class="start menu">首页</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">所有考试</a></li>
+                    <li><a href="#" class="sub_list">发布考试</a></li>
+                    <li><a href="#" class="sub_list">报名管理</a></li>
+                    <li><a href="#" class="sub_list">成绩录入</a></li>
+                    <li><a href="#" class="sub_list">证书录入</a></li>
+                    <li><a href="#" class="sub_list">统计报表</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">我的证书</a></li>
+            <li><a href="#" class="menu">软件下载</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">考试报名</a></li>
+                    <li><a href="#" class="sub_list">模拟考试</a></li>
+                    <li><a href="#" class="sub_list">我的考试</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">软件下载</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理</a>
+                <ul class="sub_menu dropdown-menu" role="menu">
+                    <li><a href="#" class="sub_list">考试报名</a></li>
+                    <li><a href="#" class="sub_list">模拟考试</a></li>
+                    <li><a href="#" class="sub_list">我的考试</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu">软件下载</a></li>
+
+
+        </ul>
+    </nav>
+    <!--menu end-->
+
+    <!--main content start-->
+
+    <!--message start-->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="attach_part" id="attach_part">
+                    <div class="attach-heading"><span>档案类别列表</span></div>
+                    <div class="attach-body">
+                        <ul class="ul-list">
+                            <li><a href="#" class="list_item">详细资料</a></li>
+                            <li><a href="#" class="list_item">就职经历</a></li>
+                            <li><a href="#" class="list_item">个人奖惩</a></li>
+                            <li><a href="#" class="list_item">个人荣誉</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="block">
+                    <!-- Default panel contents -->
+                    <div class="block-heading"><span>驾驶员档案</span></div>
+                    <div class="block-body" >
+                        <div class="search_part text-center">
+                            <input type="text" aria-controls="" class="search_input" placeholder="驾驶员档案信息" id="search_text">
+                            <input type="button" class="search_btn" value="搜索" id="search_btn">
+                        </div>
+                        <div class="block_content">
+                            <table class="table table-bordered table_info table-striped" id="driverInfo">
+
+                                <thead>
+
+                                <tr>
+                                    <th style="cursor: pointer" colspan="4">基本信息</th>
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+
+                                    <td style="cursor: pointer">驾驶员姓名</td>
+
+                                    <td style="cursor: pointer">张三</td>
+
+                                    <td style="cursor: pointer">所属籍贯</td>
+
+                                    <td style="cursor: pointer">香港</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td style="cursor: pointer">性别</td>
+
+                                    <td style="cursor: pointer">男</td>
+
+                                    <td style="cursor: pointer">身份证号</td>
+
+                                    <td style="cursor: pointer">339182771891778261</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center" style="cursor: pointer">联系电话</td>
+
+                                    <td class="text-center" style="cursor: pointer">19383627812</td>
+
+                                    <td class="text-center" style="cursor: pointer">邮编</td>
+
+                                    <td class="text-center" style="cursor: pointer">366451</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center" style="cursor: pointer">Email</td>
+
+                                    <td class="text-center" style="cursor: pointer">13689378201@163.com</td>
+
+                                    <td class="text-center" style="cursor: pointer">所属车企</td>
+
+                                    <td class="text-center" style="cursor: pointer">杭州市水泥公司</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-center" style="cursor: pointer">家庭住址</td>
+
+                                    <td class="text-center" style="cursor: pointer" colspan="3">杭州市xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            <table class="table table-bordered table_info table-striped" id="detailInfo">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th style="cursor: pointer" colspan="4">详细信息</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td style="cursor: pointer">紧急联系人</td>
+
+                                        <td style="cursor: pointer">李四</td>
+
+                                        <td style="cursor: pointer">紧急联系人联系方式</td>
+
+                                        <td style="cursor: pointer">17286362918</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td style="cursor: pointer">驾驶证号</td>
+
+                                        <td style="cursor: pointer"><a data-toggle="modal" data-target="#driverLicensePic_Modal" href="#">339182771891778261</a></td>
+
+                                        <td style="cursor: pointer">安全证书号</td>
+
+                                        <td style="cursor: pointer"><a data-toggle="modal" data-target="#driverLicensePic_Modal" href="#">339182771891778261</a></td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td style="cursor: pointer">驾驶证生效日期</td>
+
+                                        <td style="cursor: pointer">2015-01-01</td>
+
+                                        <td style="cursor: pointer">安全证生效日期</td>
+
+                                        <td style="cursor: pointer">2015-01-01</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td style="cursor: pointer">驾驶证失效日期</td>
+
+                                        <td style="cursor: pointer">2020-01-01</td>
+
+                                        <td style="cursor: pointer">安全证失效日期</td>
+
+                                        <td style="cursor: pointer">2020-01-01</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--message end-->
+
+    <!--driverLicensePic modal start-->
+    <div class="modal fade" id="driverLicensePic_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="driverLicensePicModalLabel">驾驶证照片</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="../../images/question_pic.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--driverLicensePic modal end-->
+    <!--driverSafePic modal start-->
+    <div class="modal fade" id="driverSafePic_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="driverSafePicModalLabel">安全证照片</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="../../images/question_pic.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--driverSafePic modal end-->
+
+    <!--main content end-->
+    <!--footer start-->
+    <div class="footer">
+        <nav class="navbar navbar-default common_bg" id="footer_navbar">
+            <div class="common_color">
+                Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+            </div>
+        </nav>
+    </div>
+    <!--footer end-->
+
+<script>
+    window.onload = function () {
+        var height = $("#attach_part").height()+20>$(".content .row .col-md-9").height()?$("#attach_part").height()+20:$(".content .row .col-md-9").height();
+        height=height>document.body.clientHeight-228?height:document.body.clientHeight-228;
+        $(".content .row .col-md-3").css("height",height);
+    };
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+/*recording start*/
+.submit_btn{
+    display: block;
+    margin-top: 15px;
+}
+.grade{
+    display: inline-block;
+    width: 100px;
+}
+
+/*recording end*/

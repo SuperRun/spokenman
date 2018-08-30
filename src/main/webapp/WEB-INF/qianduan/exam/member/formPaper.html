@@ -1,0 +1,716 @@
+<!--散装办自动组卷-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/jquery-ui.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+    <title>浙江省散装水泥专用车辆驾驶员管理系统-自动组卷</title>
+</head>
+<body>
+<!--header start-->
+<div class="header" id="header">
+    <nav class="navbar navbar-default common_bg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand common_color" href="#">
+                    浙江省散装水泥专用车辆驾驶员管理系统
+                </a>
+            </div>
+            <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="su_user">杭州市级散装办<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">查看用户信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">查看个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出账号</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--header end-->
+
+<!--menu start-->
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="#" class="start menu">首页</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">所有考试</a></li>
+                <li><a href="#" class="sub_list">发布考试</a></li>
+                <li><a href="#" class="sub_list">报名管理</a></li>
+                <li><a href="#" class="sub_list">成绩录入</a></li>
+                <li><a href="#" class="sub_list">证书录入</a></li>
+                <li><a href="#" class="sub_list">统计报表</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">我的证书</a></li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理</a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+
+
+    </ul>
+</nav>
+<!--menu end-->
+
+<!--main content start-->
+
+<!--message start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" id="step1">
+                <!-- Default panel contents -->
+                <!--组卷 start-->
+                <div class="panel-heading">发布考试-自动组卷<span id="operation"><a href="#" id="hide" class="glyphicon glyphicon-chevron-up"></a><a href="#" id="refresh" class="glyphicon glyphicon-refresh"></a><a href="#" id="close" class="glyphicon glyphicon-remove"></a></span></div>
+                <div class="panel-body">
+                        <div id="top_setting">
+                        <div id="difficulty" class="col-md-2" style="text-align: right;">难度设置：</div>
+                        <div class="col-md-6">
+                            <span class="range">0</span>
+                            <div  id="slider" style="width: 85%;display: inline-block"></div>
+                            <span class="range">100</span>
+                        </div>
+                        <div class="col-md-3">
+                            易：<span id="easy" class="percent">30%</span>
+                            中：<span id="middle" class="percent">40%</span>
+                            难：<span id="hard" class="percent">30%</span>
+                        </div>
+                    </div>
+                        <div id="paper_content">
+                        <div class="panel panel-primary">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-equalizer"></span>
+                                <label>根据题型、分类设置出题数量和分值</label>
+                                <div id="heading_right" style="float: right;">
+                                    <div id="count">
+                                        共<span id="count_question">0</span>道,
+                                        共<span id="count_score">0</span>分
+                                    </div>
+                                    <button class="btn btn-default" id="extract">下一步<span class="glyphicon glyphicon-menu-right" style=""></span></button>
+                                </div>
+                            </div>
+                            <div class="panel-body" id="list" style="height: 380px;">
+                                <div class="list_header">
+                                    <div class="col col-md-8">题型</div>
+                                    <div class="col col-md-2">题目数</div>
+                                    <div class="col col-md-2">分值</div>
+                                </div>
+                                <ul class="list_body">
+                                    <li class="list_item">
+                                        <div class="col col-md-8 topic">单选题<span class="glyphicon glyphicon-menu-down"></span></div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subtotal" disabled="disabled">题</div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subscore" disabled="disabled">分/题</div>
+                                    </li>
+                                    <li>
+                                        <ul class="classify_list">
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">让车情景相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">鸣笛相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">灯光相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                                </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">车辆登记相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                                </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">实习期相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                                </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">水泥车相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                                </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list_item">
+                                        <div class="col col-md-8 topic">多选题<span class="glyphicon glyphicon-menu-down"></span></div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subtotal" disabled="disabled">题</div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subscore" disabled="disabled">分/题</div>
+                                    </li>
+                                    <li>
+                                        <ul class="classify_list">
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">让车情景相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">鸣笛相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">灯光相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">车辆登记相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">实习期相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">水泥车相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list_item">
+                                        <div class="col col-md-8 topic">判断题<span class="glyphicon glyphicon-menu-down"></span></div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subtotal" disabled="disabled">题</div>
+                                        <div class="col col-md-2 text_field"><input type="text" class="text subscore" disabled="disabled">分/题</div>
+                                    </li>
+                                    <li>
+                                        <ul class="classify_list">
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">让车情景相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">鸣笛相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">灯光相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">车辆登记相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">实习期相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                            <li class="classify_item">
+                                                <div class="col-md-8 classify">水泥车相关试题</div>
+                                                <div class="col col-md-2 text_field">
+                                                    <div class="input-group spinner">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                    <span style="vertical-align: top;">/</span>
+                                                </div>
+                                                <div class="col col-md-2"></div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--组卷 end-->
+                </div>
+            <div class="panel panel-primary" id="step2">
+                <!--填写试卷信息 start-->
+                <div class="panel-heading">发布考试-自动组卷<span id="operation2"><button id="go_back" class="btn btn-default"><span class="glyphicon glyphicon-menu-left"></span>返回上级并重新选题</button></span></div>
+                <div class="panel-body">
+                    <!--<div class="col-md-1"></div>-->
+                    <div class="col-md-12">
+                        <div id="message_top">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">试卷总题数：<span class="message_num" id="total_question">50</span>题</div>
+                            <div class="col-md-3">试卷总分数：<span class="message_num" id="total_score">100</span>分</div>
+                            <div class="col-md-3">考试类型：
+                                <select size="1" name="sample_1_length" aria-controls="sample_1" class="form-control" id="paper_type">
+                                    <option value="0" selected="selected">一人一卷</option>
+                                    <option value="1">众人一卷</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div id="passInfo">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                及格方式：
+                                <label class="radio-inline">
+                                    <input type="radio" name="passingType" id="inlineRadio1" value="number" class="radio_group" checked="checked"> 及格题数
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="passingType" id="inlineRadio2" value="score" class="radio_group"> 及格分数
+                                </label>
+                            </div>
+                            <div class="col-md-3" id="passing_num">及格题数：<input type="text" class="text">题</div>
+                            <div class="col-md-3" id="passing_score">及格分数：<input type="text" class="text">分</div>
+                        </div>
+                        <div id="message_content">
+                            <div id="paper_title">
+                                <textarea id="title_container" class="text_area form-control input-lg" placeholder="试卷名字（必填）"></textarea>
+                            </div>
+                            <div id="paper_describe">
+                                <textarea id="describe_container" class="text_area form-control" placeholder="试卷描述，该信息考生不可见（必填）"></textarea>
+                            </div>
+                        </div>
+                        <input type="button" class="btn btn-primary paper_btn" value="保存试卷" id="paperKeep">
+                        <input type="button" class="btn btn-primary paper_btn" value="保存试卷" id="paperPreview" data-toggle="modal" data-target="#preview_Modal">
+                    </div>
+                    <!--<div class="col-md-1"></div>-->
+                </div>
+                <!--填写试卷信息 end-->
+            </div>
+
+        </div>
+    </div>
+    <!--message end-->
+</div>
+<!--preview modal start-->
+<div class="modal fade bs-example-modal-lg" id="preview_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="previewModalLabel">试卷预览</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                    <div class="col-md-9">
+                        <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                        <ul id="answer_list">
+                            <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                            <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                        </ul>
+                     </div>
+                    <div class="col-md-3 text-center" id="media-container">
+                        <img src="../../images/question_pic.jpg">
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <div class="col-md-9">
+                        <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                        <ul id="answer_list">
+                            <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                            <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 text-center" id="media-container">
+                        <img src="../../images/question_pic.jpg">
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <div class="col-md-9">
+                        <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                        <ul id="answer_list">
+                            <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                            <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 text-center" id="media-container">
+                        <img src="../../images/question_pic.jpg">
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content"><img src="../../images/question_pic.jpg"></span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content"><img src="../../images/question_pic.jpg"></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                            <img src="../../images/question_pic.jpg">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <h3 class="question" id="question"><span class="serial_number">2</span>&nbsp;<span class="question_content">打开后雾灯开关，（如图所示）亮起。</span></h3>
+                            <ul id="answer_list">
+                                <li class="answer_item"><span class="">A</span>&nbsp;<span class="answer_content">正确</span></li>
+                                <li class="answer_item"><span class="">B</span>&nbsp;<span class="answer_content">错误</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center" id="media-container">
+                            <img src="../../images/question_pic.jpg">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">重新组卷</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--cancel modal end-->
+<!--main content end-->
+<!--footer start-->
+<div class="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom common_bg" id="footer_navbar">
+        <div class="container common_color">
+            Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+        </div>
+    </nav>
+</div>
+<!--footer end-->
+<script>
+    window.onload = function(){
+
+        var radio = $("input[name='passingType']");
+        $("input[name='passingType']").change(function () {
+            if($("input[name='passingType']:checked").val()=='number'){
+                $("#passing_num").show();
+                $("#passing_score").hide();
+            }else if($("input[name='passingType']:checked").val()=='score'){
+                $("#passing_num").hide();
+                $("#passing_score").show();
+            }
+        });
+
+
+
+        var numList = $("input[type = number]");
+        var subtotal = $(".subtotal");
+        var subscore = $(".subscore");
+        $("input[type = number]").change(function () {
+            for(var i = 0;i<subtotal.length;i++){
+                var obj = $(subtotal[i]).parent().parent().next().children().children().children().children().children();
+                $(subtotal[i]).val(sum(obj));
+            }
+            $("#count_question").html(sum(subtotal));
+            $("#count_score").html(getScore());
+
+        });
+        $(".subscore").change(function () {
+            $("#count_score").html(getScore())
+        })
+
+
+//求和函数
+        function sum(obj){
+            var sumFinal = 0;
+            for(var i=0;i<obj.length;i++){
+                sumFinal = sumFinal + parseInt($(obj[i]).val());
+            }
+            return sumFinal;
+        }
+//求总分函数
+        function getScore(){
+            var scoreFinal = 0;
+            for(var j=0;j<subtotal.length;j++){
+                if($(subtotal[j]).val()==""){
+                    $(subtotal[j]).val(0);
+                }
+                if($(subscore[j]).val()==""){
+                    $(subscore[j]).val(0);
+                }
+                scoreFinal = scoreFinal + parseInt($(subtotal[j]).val())*parseInt($(subscore[j]).val());
+            }
+            return scoreFinal;
+
+        }
+
+        $("#paper_type").click(function () {
+            if($("select option:checked").val()==1){
+                $("#paperPreview").show();
+                $("#paperKeep").hide();
+            }else if($("select option:checked").val()==0){
+                $("#paperPreview").hide();
+                $("#paperKeep").show();
+            }
+        });
+
+        showSlider();
+        var menu = new Array();
+        menu = $(".menu");
+        var a_hover = $(".a_hover");
+        for(var k =0;k<a_hover.length;k++){
+            $(a_hover[k]).next().show();
+        }
+        for(var i=0;i<menu.length;i++){
+            menu[i].onclick = function () {
+                var sub_menu = $(this).next();
+                for(var j=0;j<menu.length;j++){
+                    if(j!=i){
+                        $(menu[j]).removeClass("a_hover");
+                        $(menu[j]).next().hide();
+                    }
+
+                }
+                $(this).addClass("a_hover");
+            }
+        }
+
+        var sub_list = new Array();
+        sub_list = $(".sub_list");
+        for(var m = 0;m<sub_list.length;m++){
+            sub_list[m].onclick = function () {
+                for(var n = 0;n<sub_list.length;n++){
+                    if(n!=m){
+                        $(sub_list[n]).removeClass("list_hover");
+                    }
+                }
+
+                $(this).addClass("list_hover");
+            }
+        }
+
+
+        var list = new Array();
+        list = $(".topic");
+        for(var t = 0;t<list.length;t++){
+            list[t].onclick = function () {
+                if($(this).parent().next().children().is(":hidden")){
+                    $(this).parent().next().children().show();
+                    $(this).addClass("topic_click");
+                }else if($(this).parent().next().children().is(":visible")){
+                    $(this).parent().next().children().hide();
+                    $(this).removeClass("topic_click");
+                }
+
+            }
+        }
+
+        var extract = $("#extract");
+        extract.click(function () {
+            $("#step1").hide();
+            $("#step2").show();
+        })
+        var back = $("#go_back");
+        back.click(function () {
+            $("#step1").show();
+            $("#step2").hide();
+        })
+
+
+    }
+    $( "#slider" ).slider({
+        max:100,
+        min:0,
+        step:1,
+        range: true,
+        values: [ 30, 70 ]
+    });
+    function showSlider(){
+        var timer = null;
+        clearInterval(timer);
+        timer = setInterval(function () {
+            var values = $( "#slider" ).slider( "option", "values" );
+            $("#easy").html(values[0]+"%");
+            $("#middle").html((values[1]-values[0])+"%");
+            $("#hard").html((100-values[1])+"%");
+        },500);
+
+    }
+
+
+</script>
+</body>
+</html>

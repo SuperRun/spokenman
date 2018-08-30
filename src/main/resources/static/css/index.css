@@ -1,0 +1,158 @@
+#part1{
+	position: relative;
+	width: 100%;
+	height: 356px;
+	margin-top: 30px;
+	
+}
+#part1 img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+#part1-notice-bg{
+	position: absolute;
+	left: 180px;
+	top: 0px;
+	width: 25%;
+	height: 100%;
+	background: #f8f8f88c ;
+	text-align: center;
+}
+#part1-notice-bg h2{
+	margin-top: 30px;
+	letter-spacing: 4px;
+	line-height: 80px;
+	font-weight: bold;
+	color: #2D4059;
+}
+#part1-notice-bg p{
+	width: 62%;
+	font-size: 12px;
+	margin:0 auto;
+	text-align: left;
+	text-indent:2em;
+}
+.join-btn{
+	margin-top:40px;
+	border: 2px solid #2D4059;
+	background: transparent;
+	color: #2D4059;
+}
+.join-btn:hover{
+	color:#537791;
+	border-color: #2D4059;
+}
+#part2{
+	position: relative;
+	margin-left: -15px;
+	width: 1349px;
+	min-height:400px;
+	background: #fff;
+}
+.part-title{
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translate(-50%,0);
+	width: 200px;
+	margin: 0px auto;
+	/* border: 1px solid black; */
+}
+.part-title-left{
+	width: 30px;
+	height: 30px;
+	border-right: 3px solid #537791;
+	line-height: 30px;
+	color: #537791;
+	font-size: 16px;
+	font-weight:bold;
+	float: left;
+}
+.part-title-right{
+	float: left;
+	height: 30px;
+	margin-left: 20px;
+	font-size: 16px;
+	line-height: 30px;
+	letter-spacing: 2px;
+}
+#part2-container{
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.part2-grid{
+	width: 200px;
+	height: 250px;
+	text-align: center;
+	border: 2px solid #537791;
+}
+.part2-icon{
+	font-size: 60px;
+	color: #537791;
+}
+.part2-grid i{
+	cursor: pointer;
+}
+.part2-grid h3{
+	line-height: 30px;
+}
+.part2-grid p{
+	text-align: left;
+	margin: 10px auto;
+	width: 60%;
+	color: #455D7A;
+	font-size: 14px;
+}
+#part3{
+	position: relative;
+	width: 100%;
+	min-height:500px;
+}
+#part3-container{
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.part3-grid{
+	width: 250px;
+	height: 160px;
+	text-align: center;
+}
+.part3-grid img{
+	width: 100px;
+	height: 100px;
+}
+.part3-grid p{
+	width: 80%;
+	color: #fff;
+	margin:0 auto;
+}
+.part3-grid-bg1{
+	background: #EA5455;
+}
+.part3-grid-bg2{
+	background: #FAC55B;
+}
+.part3-grid-bg3{
+	background: #81CBC8;
+}
+.part3-grid-bg4{
+	background: #51ADCF;
+}
+#part4{
+	position: relative;
+	margin-left: -15px;
+	width: 1349px;
+	min-height:400px;
+	background: #fff;
+}
+#part4-container{
+	position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,0);
+}

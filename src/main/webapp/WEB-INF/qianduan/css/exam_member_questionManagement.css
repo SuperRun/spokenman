@@ -1,0 +1,137 @@
+/*exam/driver/questionManagement start*/
+
+
+.questionManagement_body li{
+    list-style: none;
+}
+.questionManagement_body .pb_top{
+    /*height: 40px;*/
+}
+
+.modal-body{
+    height: auto !important;
+    zoom: 1;
+    overflow:hidden;
+}
+
+.screen_list>li>a{
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.search_btn{
+    width: auto;
+}
+.screen_list{
+    margin-left: 0;
+}
+.tab-content{
+    margin-left: 15px;
+}
+
+.text_content{
+    font-weight: normal;
+    width: 85%;
+}
+.filter_div{
+    float: left;
+    clear: both;
+    margin-top: 20px;
+
+}
+.filter_ul li{
+    margin-bottom: 5px;
+}
+.filter_ul li label{
+    font-weight: normal;
+}
+
+.question_list>li:nth-of-type(even){
+    background-color: #F8FCFF;
+}
+.question_item{
+    padding: 10px 5px;
+    border-bottom: 1px dashed #E6E9ED;
+}
+.info_list>li{
+    display: inline-block;
+}
+.question_type label{
+    font-weight: normal;
+    color: #8c8c8c;
+}
+.info_item label{
+    font-weight: normal;
+    display: inline-block;
+    padding: 4px 7px;
+    background-color: #E6E9ED;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.question_time{
+    color: #8c8c8c;
+    font-size: 12px;
+}
+.operation_part{
+    float: right;
+    margin-right: 120px;
+}
+.question_content{
+    margin: 10px 0;
+}
+
+.pic_list>.pic_item{
+    display: inline-block;
+    text-align: center;
+}
+.pic_item img{
+    display: block;
+}
+.answer_list{
+    width: 410px;
+}
+.answer_list .answer_item{
+    padding: 8px 16px;
+    border: 1px solid #E6E9ED;
+    border-radius: 3px;
+    color: #6f6f6f;
+    margin: 5px 0;
+}
+.answer_item img{
+    width: 100px;
+    height: 100px;
+}
+.show_answer a{
+    cursor: pointer;
+}
+.answer_content{
+    display: none;
+}
+.detail_form .text_title{
+    width: 70px;
+}
+.queation_creater{
+    color: #8c8c8c;
+}
+.queation_creater{
+    display: none;
+}
+.reference_version{
+    border-left: 4px solid #337ab7;
+    padding-left: 10px;
+    display: none;
+    margin-bottom: 10px;
+}
+.reference_version span{
+    font-size: 12px;
+    color: #8c8c8c;
+}
+.reference_version .correct_answer{
+    font-weight: bold;
+    color: #337ab7;
+    margin-top: 15px;
+}
+.reference_version .correct_answer .answer{
+    font-weight: normal;
+    color: #000;
+}
+/*exam/driver/questionManagement end*/

@@ -1,0 +1,84 @@
+body{
+	background: #F4F9F4/* #E7E6E1 */;
+	/* background: linear-gradient(to top , rgba(247,246,231), rgba(247,246,232)); */
+}
+.platform-header{
+	height: 80px;
+	background: #fff;
+}
+#logo{
+	margin-top: 15px;
+}
+#title{
+	line-height: 80px;
+	letter-spacing: 3px;
+}
+#headImg{
+	margin-top: 15px;
+	margin-left: 10px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+}
+#username{
+	font-size:16px;
+	line-height: 80px;
+}
+#triangle{
+	position: absolute;
+	left: 10%;
+	top: 92%;
+	z-index: 1;
+}
+#detail{
+	min-width: 60% !important;
+	margin-top: 24px;
+	text-align: center;
+	z-index: 0;
+}
+#detail dd,#detail a{
+	cursor:pointer;
+}
+.platform-nav{
+	background-color: #537791/*#EA5455 #D6C481*/ /* #C14545 */ ;
+	box-shadow: 5px 5px 5px #B8B8B8 ;
+	padding: 0px 190px;
+}
+.management{
+	/* background: #FAF9F0; */
+}
+.layui-nav-bar, .layui-nav .layui-this:after, .layui-nav-tree .layui-nav-itemed:after{
+	background-color: /* #FAF4D0 */ #FDE9C9;
+	height: 3px;
+}
+.layui-nav a{
+	font-size: 16px;
+}
+.layui-nav dd a{
+	font-size: 15px;
+}
+.menu-this{
+	background:#5A92AF;
+}
+#left-menu-item{
+	position: absolute;
+	top: 200px;
+	left: -115px;
+	min-width: 120px;
+	text-align: center;
+	box-shadow: none;
+	border:none;
+	border-right: 4px solid /* #2D4059 */#669B7C;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.platform-footer{
+	border-top: 1px solid #ececec;
+	background: #537791;
+}
+.platform-footer p{
+	text-align: center;
+	margin-top: 2%;
+	color:  /* #606061 */#fff ;
+}

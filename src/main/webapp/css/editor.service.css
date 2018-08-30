@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.editor{width:750px}
+.editor table{width:750px !important;margin:0px !important;}
+.editor table tr td{ border:0px;  text-align: left; font-family: 微软雅黑;color:#666;height:auto ;}
+.editor img{margin:0px !important;}
+.editor span { font-size: 14px !important; margin-bottom: 4px !important;}

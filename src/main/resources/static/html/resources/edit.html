@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平台管理</title>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+	<script src="../../layui/layui.js"></script>
+
+</head>
+
+<body>
+<div class="layui-fluid" style="margin-top: 20px;">
+
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">资源名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name" lay-verify="title" autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">资源介绍</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="intro"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">类型</label>
+                <div class="layui-input-inline">
+                    <select name="type" lay-verify="required" lay-search="">
+                        <option value="0">全部</option>
+                        <option value="1">视频</option>
+                        <option value="2">音频</option>
+                        <option value="3">图文</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">讲师姓名</label>
+                <div class="layui-input-block">
+                    <select name="tname" lay-filter="aihao">
+                        <option value="0" selected="">全部</option>
+                        <option value="1">杜甫</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+                <label class="layui-form-label">阶段</label>
+            <div class="layui-input-inline">
+                <select name="level" lay-verify="required" lay-search="">
+                    <option value="0">全部</option>
+                    <option value="1">国家级</option>
+                    <option value="2">省部级</option>
+                    <option value="3">司厅局级</option>
+                    <option value="4">县处级</option>
+                    <option value="5">乡镇科级</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label">状态</label>
+                <div class="layui-input-block">
+                    <select name="status" lay-filter="aihao">
+                        <option value="0" selected="">正常</option>
+                        <option value="1">删除</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <input type="text" name="remark"  autocomplete="off"  class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label">权限类型</label>
+                <div class="layui-input-block">
+                    <select name="status" lay-filter="aihao">
+                        <option value="0" selected="">全部可见</option>
+                        <option value="1">下级不可见</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <input type="text" name="remark"  autocomplete="off"  class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script>
+    layui.use(['element', 'form'],function(){});
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+
+        //时间选择器
+        laydate.render({
+            elem: '#date'
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#date2'
+            ,type: 'datetime'
+        });
+    });
+</script>
+</body>
+</html>

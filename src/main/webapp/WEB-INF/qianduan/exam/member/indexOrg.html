@@ -1,0 +1,607 @@
+<!--散装办首页-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <title>浙江省散装水泥专用车辆驾驶员管理系统-首页</title>
+</head>
+<body>
+<!--header start-->
+<div class="header" id="header">
+    <nav class="navbar navbar-default common_bg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand common_color">
+                    浙江省散装水泥专用车辆驾驶员管理系统
+                </a>
+            </div>
+            <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="su_user">杭州市级散装办<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">查看用户信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">查看个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出账号</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--header end-->
+
+<!--menu start-->
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="#" class="start menu">首页</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">所有考试</a></li>
+                <li><a href="#" class="sub_list">发布考试</a></li>
+                <li><a href="#" class="sub_list">报名管理</a></li>
+                <li><a href="#" class="sub_list">成绩录入</a></li>
+                <li><a href="#" class="sub_list">证书录入</a></li>
+                <li><a href="#" class="sub_list">统计报表</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">我的证书</a></li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理<span class="caret"></span></a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">考试管理</a>
+            <ul class="sub_menu dropdown-menu" role="menu">
+                <li><a href="#" class="sub_list">考试报名</a></li>
+                <li><a href="#" class="sub_list">模拟考试</a></li>
+                <li><a href="#" class="sub_list">我的考试</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="menu">软件下载</a></li>
+
+
+    </ul>
+</nav>
+<!--menu end-->
+
+<!--main content start-->
+
+<!--message start-->
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">已发布的考试<span id="operation"><a href="#" id="hide" class="glyphicon glyphicon-chevron-up"></a><a href="#" id="refresh" class="glyphicon glyphicon-refresh"></a><a href="#" id="close" class="glyphicon glyphicon-remove"></a></span></div>
+        <div class="panel-body">
+            <div id="pb_top">
+                <div class="col-md-6">
+                    <label id="record_num">
+                        <select size="1" name="sample_1_length" aria-controls="sample_1" class="">
+                            <option value="5" selected="selected">5</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="-1">全部</option>
+                        </select> 记录/页
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <label id="search">搜索:
+                        <input type="text" aria-controls="" class="form-control" placeholder="考试名称/考试时间" id="search_text">
+                    </label>
+                    <input type="button" class="btn btn-primary" value="搜索" id="search_btn">
+                </div>
+            </div>
+            <div id="pb_content">
+                <table class="table table-bordered" id="registration_tab">
+                    <thead>
+
+                    <tr>
+                        <th class="text-center" style="cursor: pointer;">发布时间</th>
+
+                        <th class="text-center" style="cursor: pointer;">考试时间</th>
+
+                        <th class="text-center" style="cursor: pointer;">考试名称</th>
+
+                        <th class="text-center" style="cursor: pointer;">考试状态</th>
+
+                        <th class="text-center" style="cursor: pointer;">操作</th>
+                    </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+                    <tr>
+
+                        <td class="text-center">2016/05/08</td>
+
+                        <td class="text-center">2016/08/20</td>
+
+                        <td class="text-center"><a data-toggle="modal" data-target="#examInfo_Modal" href="#">杭州市水泥车驾驶员资格考试</a></td>
+
+                        <td class="text-center"><span class="label-info label release">已发布</span></td>
+
+                        <td class="text-center"><button class="btn btn-primary">编辑</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="text-center">2016/05/08</td>
+
+                        <td class="text-center">2016/08/20</td>
+
+                        <td class="text-center"><a data-toggle="modal" data-target="#examInfo_Modal" href="#">杭州市水泥车驾驶员资格考试</a></td>
+
+                        <td class="text-center"><span class="label-warning label signUp">报名中</span></td>
+
+                        <td class="text-center"><button class="btn btn-primary">报名管理</button></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="text-center">2016/05/08</td>
+
+                        <td class="text-center">2016/08/20</td>
+
+                        <td class="text-center"><a data-toggle="modal" data-target="#examInfo_Modal" href="#">杭州市水泥车驾驶员资格考试</a></td>
+
+                        <td class="text-center"><span class="label label-danger Examing">待考试</span></td>
+
+                        <td class="text-center"><span id="wait">等待考试中</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="text-center">2016/05/08</td>
+
+                        <td class="text-center">2016/07/20</td>
+
+                        <td class="text-center"><a data-toggle="modal" data-target="#examInfo_Modal" href="#">杭州市水泥车驾驶员资格考试</a></td>
+
+                        <td class="text-center"><span class="label label-success marking">阅卷中</span></td>
+
+                        <td class="text-center"><button class="btn btn-primary">成绩录入</button></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="text-center">2016/05/08</td>
+
+                        <td class="text-center">2016/06/20</td>
+
+                        <td class="text-center"><a data-toggle="modal" data-target="#examInfo_Modal" href="#">杭州市水泥车驾驶员资格考试</a></td>
+
+                        <td class="text-center"><span class="label label-primary finished">已完成</span></td>
+
+                        <td class="text-center"><button class="btn btn-primary" data-toggle="modal" data-target="#exam_Modal">查看考试情况</button></td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+                <span>总共<label class="num" id="records">1373</label>条记录 | 第<label class="num" id="page_num">1</label>页/共<label class="num" id="pages">138</label>页</span>
+                <nav id="paging_nav">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="first" class="glyphicon glyphicon-step-backward" alt="第一页" title="第一页"></a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="previous" class="glyphicon glyphicon-chevron-left" alt="上一页" title="上一页"></a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="next" class="glyphicon glyphicon-chevron-right" alt="下一页" title="下一页"></a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="last" class="glyphicon glyphicon-step-forward" alt="最后一页" title="最后一页"></a>
+                        </li>
+                        <li>
+                            <input type="text" aria-controls="" class="form-control" placeholder="输入页码" id="page_text">
+                        </li>
+                        <li>
+                            <input type="button" class="btn btn-primary" value="跳转" id="goto_btn">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<!--message end-->
+<!--examInfo modal start-->
+<div class="modal fade" id="examInfo_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="examInfoModalLabel">考试信息</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试名称：</label>
+                        <label class="col-sm-8 text_message">杭州市水泥车驾驶员资格考试</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试日期：</label>
+                        <label class="col-sm-8 text_message">2016/08/20</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试时间：</label>
+                        <label class="col-sm-8 text_message">9：00</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试地点：</label>
+                        <label class="col-sm-8 text_message">暂未通知（请注意查看通知）</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试说明：</label>
+                        <label class="col-sm-8 text_message">暂未通知（请注意查看通知）</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--examInfo modal end-->
+<!--exam modal start-->
+<div class="modal fade" id="exam_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="examModalLabel">考试情况</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试名称：</label>
+                        <label class="col-sm-8 text_message">杭州市水泥车驾驶员资格考试</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">发布时间：</label>
+                        <label class="col-sm-8 text_message">2016/08/20</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">发布组织：</label>
+                        <label class="col-sm-8 text_message">杭州市散装办</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试通过人数：</label>
+                        <label class="col-sm-8 text_message">45</label>
+                    </div>
+                    <div class="form-group text-center"><a id="show-pass" style="cursor: pointer;">显示考试通过详情</a></div>
+                    <div id="passInfo_part" class="moreInfo_part">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered">
+                            <caption>考试通过人员</caption>
+                            <thead>
+                            <tr>
+                                <th class="text-center" style="cursor: pointer;">驾驶员</th>
+                                <th class="text-center" style="cursor: pointer;">所在车企</th>
+                                <th class="text-center" style="cursor: pointer;">散装办</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"> 张三</td>
+                                <td class="text-center"> 杭州第一车企</td>
+                                <td class="text-center"> 杭州市散装办</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试参加人数：</label>
+                        <label class="col-sm-8 text_message">60</label>
+                    </div>
+                    <div class="form-group text-center"><a id="show-join" style="cursor: pointer;">显示考试参加详情</a></div>
+                    <div id="joinInfo_part" class="moreInfo_part">
+                        <div class="col-sm-12">
+
+                            <table class="table table-bordered">
+                                <caption>考试参加人员</caption>
+                                <thead>
+                                <tr>
+                                    <th class="text-center" style="cursor: pointer;">驾驶员</th>
+                                    <th class="text-center" style="cursor: pointer;">所在车企</th>
+                                    <th class="text-center" style="cursor: pointer;">散装办</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text_title">考试报名人数：</label>
+                        <label class="col-sm-8 text_message">62</label>
+                    </div>
+                    <div class="form-group text-center"><a id="show-sign" style="cursor: pointer;">显示考试报名详情</a></div>
+                    <div id="signInfo_part" class="moreInfo_part">
+                        <div class="col-sm-12">
+
+                            <table class="table table-bordered">
+                                <caption>考试报名人员</caption>
+                                <thead>
+                                <tr>
+                                    <th class="text-center" style="cursor: pointer;">驾驶员</th>
+                                    <th class="text-center" style="cursor: pointer;">所在车企</th>
+                                    <th class="text-center" style="cursor: pointer;">散装办</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"> 张三</td>
+                                    <td class="text-center"> 杭州第一车企</td>
+                                    <td class="text-center"> 杭州市散装办</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--exam modal end-->
+
+
+
+<!--main content end-->
+<!--footer start-->
+<div class="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom common_bg" id="footer_navbar">
+        <div class="container common_color">
+            Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+        </div>
+    </nav>
+</div>
+<!--footer end-->
+<script>
+    window.onload = function(){
+
+
+        $("#show-pass").bind('click', function() {
+            if($("#passInfo_part").css('display')=='none'){
+                $("#passInfo_part").show();
+                $(this).html("隐藏内容");
+            }else if($("#passInfo_part").css('display')=='block'){
+                $("#passInfo_part").hide();
+                $(this).html("显示更多内容");
+            }
+        });
+
+        $("#show-sign").bind('click', function() {
+            if($("#signInfo_part").css('display')=='none'){
+                $("#signInfo_part").show();
+                $(this).html("隐藏内容");
+            }else if($("#signInfo_part").css('display')=='block'){
+                $("#signInfo_part").hide();
+                $(this).html("显示更多内容");
+            }
+        });
+
+
+        $("#show-join").bind('click', function() {
+            if($("#joinInfo_part").css('display')=='none'){
+                $("#joinInfo_part").show();
+                $(this).html("隐藏内容");
+            }else if($("#joinInfo_part").css('display')=='block'){
+                $("#joinInfo_part").hide();
+                $(this).html("显示更多内容");
+            }
+        });
+
+
+        var menu = new Array();
+        menu = $(".menu");
+        var a_hover = $(".a_hover");
+        for(var k =0;k<a_hover.length;k++){
+            $(a_hover[k]).next().show();
+        }
+        for(var i=0;i<menu.length;i++){
+            menu[i].onclick = function () {
+                var sub_menu = $(this).next();
+                for(var j=0;j<menu.length;j++){
+                    if(j!=i){
+                        $(menu[j]).removeClass("a_hover");
+                        $(menu[j]).next().hide();
+                    }
+
+                }
+                $(this).addClass("a_hover");
+
+                if(sub_menu.css("display")=="none"){
+                    sub_menu.show();
+                }else if(sub_menu.css("display")!="none"){
+                    sub_menu.hide();
+                }
+
+            }
+        }
+        var sub_list = new Array();
+        sub_list = $(".sub_list");
+        for(var m = 0;m<sub_list.length;m++){
+            sub_list[m].onclick = function () {
+                for(var n = 0;n<sub_list.length;n++){
+                    if(n!=m){
+                        $(sub_list[n]).removeClass("list_hover");
+                    }
+                }
+
+                $(this).addClass("list_hover");
+            }
+        }
+    }
+</script>
+</body>
+</html>

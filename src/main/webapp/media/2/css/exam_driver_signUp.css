@@ -1,0 +1,54 @@
+/*signUp start*/
+#operation{
+    float: right;
+}
+#operation a{
+    margin-right: 10px;
+    color: #ffffff;
+}
+#operation a:hover{
+    text-decoration: none;
+    color: #23527c;
+}
+#record_num{
+    font-weight: normal;
+}
+#search{
+    font-weight: normal;
+}
+#search_text{
+    display: inline-block;
+    width: 200px;
+}
+#search_btn{
+    width: 80px;
+}
+#registration_tab td{
+    vertical-align: middle;
+}
+.num{
+    color: #23527c;
+    font-weight: normal;
+}
+#paging_nav{
+    float: right;
+}
+.pagination{
+    margin: 0px;
+}
+#page_text{
+    display: inline-block;
+    width: 120px;
+}
+#goto_btn{
+    width: 80px;
+}
+.text_title{
+    text-align: right;
+    font-weight: normal;
+}
+.text_message{
+    text-align: left;
+    font-weight: normal;
+}
+/*signUp end*/

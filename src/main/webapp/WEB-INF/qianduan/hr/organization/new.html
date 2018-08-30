@@ -1,0 +1,361 @@
+<!--散装办创建机构-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-filestyle.min.js"></script>
+    <title>浙江省散装水泥专用车辆驾驶员管理系统-创建机构</title>
+</head>
+<body>
+<!--header start-->
+<div class="header" id="header">
+    <nav class="navbar navbar-default common_bg">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand common_color">
+                    浙江省散装水泥专用车辆驾驶员管理系统
+                </a>
+            </div>
+            <a href="#" class="dropdown-toggle navbar-right common_color" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false" id="su_user">杭州市级散装办<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">查看用户信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">查看个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出账号</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--header end-->
+<!--main content start-->
+
+<!--message start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <!--menu start-->
+            <nav>
+                <div class="nav_title">功能选择</div>
+                <ul class="nav">
+                    <li><a href="#" class="start menu">首页</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu">考试管理</a>
+                        <ul class="sub_menu">
+                            <li><a href="#" class="sub_list">所有考试</a></li>
+                            <li><a href="#" class="sub_list">发布考试</a></li>
+                            <li><a href="#" class="sub_list">报名管理</a></li>
+                            <li><a href="#" class="sub_list">成绩录入</a></li>
+                            <li><a href="#" class="sub_list">证书录入</a></li>
+                            <li><a href="#" class="sub_list">统计报表</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu a_hover">机构管理</a>
+                        <ul class="sub_menu">
+                            <li><a href="#" class="sub_list list_hover">创建机构</a></li>
+                            <li><a href="#" class="sub_list">查看机构</a></li>
+                            <li><a href="#" class="sub_list">待审核机构<span class="badge">3</span></a></li>
+                            <li><a href="#" class="sub_list">机构信息编辑</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="menu">软件下载</a></li>
+                    <li>
+                        <a href="#" class="menu">考试管理</a>
+                        <ul class="sub_menu">
+                            <li><a href="#" class="sub_list">考试报名</a></li>
+                            <li><a href="#" class="sub_list">模拟考试</a></li>
+                            <li><a href="#" class="sub_list">我的考试</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="menu">软件下载</a></li>
+
+
+                </ul>
+            </nav>
+            <!--menu end-->
+        </div>
+        <div class="col-md-10">
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading">机构基本信息<span id="operation"><a href="#" id="hide"
+                                                                         class="glyphicon glyphicon-chevron-up"></a><a
+                        href="#" id="refresh" class="glyphicon glyphicon-refresh"></a><a href="#" id="close"
+                                                                                         class="glyphicon glyphicon-remove"></a></span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <form class="form-horizontal" id="organizationInfo">
+                            <div class="form-group">
+                                <label for="orgType" class="col-sm-2 control-label">组织机构类型</label>
+                                <div class="col-sm-10">
+                                    <select id="orgType" class="form-control">
+                                        <option value="0">省级散装办</option>
+                                        <option value="1">市级散装办</option>
+                                        <option value="2">区级散装办</option>
+                                        <option value="3" id="car">车企</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="parentOrgDiv" style="display: none">
+                                <label for="districtOrg" class="col-sm-2 control-label">上级机构</label>
+                                <div class="col-md-3" style="display: none" id="provinceOrgDiv">
+                                    <select id="provinceOrgOrg" class="form-control">
+                                        <option value="0">浙江省散装办</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" style="display: none" id="cityOrgDiv">
+                                    <select id="cityOrg" class="form-control">
+                                        <option value="0">杭州市散装办</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4" id="districtOrgDiv" style="display: none">
+                                    <select id="districtOrg" class="form-control">
+                                        <option value="0">西湖区散装办</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="orgName" class="col-sm-2 control-label">机构全称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="orgName" class="form-control" placeholder="所创建机构的全称">
+                                    <label class="error">考试名称不得少于5个字！</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shortName" class="col-sm-2 control-label">机构简称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="shortName" class="form-control" placeholder="所创建机构的简称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="orgDescribe" class="col-sm-2 control-label">机构描述</label>
+                                <div class="col-sm-10">
+                                    <textarea id="orgDescribe" class="form-control" placeholder="对所创建机构的描述"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="directorId" class="col-sm-2 control-label">主管用户名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="directorId" class="form-control" placeholder="主管用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="directorName" class="col-sm-2 control-label">主管姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="directorName" class="form-control" disabled value="王小二">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="directorTel" class="col-sm-2 control-label">主管联系方式</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="directorTel" class="form-control" placeholder="主管联系方式">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="directorEmail" class="col-sm-2 control-label">主管Email</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="directorEmail" class="form-control" placeholder="主管Email">
+                                </div>
+                            </div>
+                            <div id="carCompany">
+                                <hr>
+                                <div class="form-group">
+                                    <label for="lrName" class="col-sm-2 control-label">法人代表姓名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="lrName" class="form-control" placeholder="法人代表姓名">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="licenseNum" class="col-sm-2 control-label">营业执照编号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="licenseNum" class="form-control" placeholder="营业执照编号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="licenseScanner" class="col-sm-2 control-label">营业执照扫描件</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file" class="filestyle file_sm" data-size="sm" id="licenseScanner">
+                                        <div class="preview"><a href="#" target="_blank"><img src=""></a></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="taxNum" class="col-sm-2 control-label">税务登记证号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="taxNum" class="form-control" placeholder="税务登记证号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="taxScanner" class="col-sm-2 control-label">税务登记证扫描件</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file" class="filestyle file_sm" data-size="sm" id="taxScanner">
+                                        <div class="preview"><a href="#" target="_blank"><img src=""></a></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="creditNum" class="col-sm-2 control-label">机构信用证号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="creditNum" class="form-control" placeholder="机构信用证号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="creditScanner" class="col-sm-2 control-label">机构信用证扫描件</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file" class="filestyle file_sm" data-size="sm" id="creditScanner">
+                                        <div class="preview"><a href="#" target="_blank"><img src=""></a></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="orgNum" class="col-sm-2 control-label">组织机构证号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="orgNum" class="form-control" placeholder="组织机构证号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="orgScanner" class="col-sm-2 control-label">组织机构证扫描件</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file" class="filestyle file_sm" data-size="sm" id="orgScanner">
+                                        <div class="preview"><a href="#" target="_blank"><img src=""></a></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="safetyNum" class="col-sm-2 control-label">安全生产许可证号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="safetyNum" class="form-control" placeholder="安全生产许可证号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="safetyScanner" class="col-sm-2 control-label">安全生产许可证扫描件</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file" class="filestyle file_sm" data-size="sm" id="safetyScanner">
+                                        <div class="preview"><a href="#" target="_blank"><img src=""></a></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="capital" class="col-sm-2 control-label">总注册资本</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="capital" class="form-control" placeholder="总注册资本">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-3">
+                                    <input type="submit" class="btn btn-primary" value="创建">
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--message end-->
+
+
+<!--main content end-->
+<!--footer start-->
+<div class="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom common_bg" id="footer_navbar">
+        <div class="container common_color">
+            Copyright：2016~??? 版权所有：浙江省散装水泥办公室 技术支持：浙江网泽科技有限公司
+        </div>
+    </nav>
+</div>
+<!--footer end-->
+<script>
+    window.onload = function () {
+//        车企信息填写部分显示隐藏
+        $("#orgType").change(function () {
+            var parentOrgDiv =  $('#parentOrgDiv');
+            var provinceOrgDiv = $('#provinceOrgDiv');
+            var cityOrgDiv = $('#cityOrgDiv');
+            var districtOrgDiv = $('#districtOrgDiv');
+            if ($(this).val() == 3) {
+                $("#carCompany").show(200);
+                parentOrgDiv.show(100);
+                provinceOrgDiv.show(200);
+                cityOrgDiv.show(200);
+                districtOrgDiv.show(200);
+            } else {
+                $("#carCompany").hide(100);
+            }
+            if ($(this).val()==0){
+                //创建省机构的时候隐藏上级机构
+                parentOrgDiv.hide(100);
+                provinceOrgDiv.hide(200);
+                cityOrgDiv.hide(100);
+                districtOrgDiv.hide(100);
+            }else if($(this).val()==1){
+                //创建市级机构
+                parentOrgDiv.show(100);
+                provinceOrgDiv.show(200);
+                cityOrgDiv.hide(100);
+                districtOrgDiv.hide(100);
+            }else if($(this).val()==2){
+                //创建区级机构
+                parentOrgDiv.show(100);
+                provinceOrgDiv.show(200);
+                cityOrgDiv.show(200);
+                districtOrgDiv.hide(100);
+            }
+        });
+        $(".file_sm").change(function () {
+            $(this).next().next().show();
+        })
+
+        var menu = new Array();
+        menu = $(".menu");
+        var a_hover = $(".a_hover");
+        for (var k = 0; k < a_hover.length; k++) {
+            $(a_hover[k]).next().show();
+        }
+        for (var i = 0; i < menu.length; i++) {
+            menu[i].onclick = function () {
+                var sub_menu = $(this).next();
+                for (var j = 0; j < menu.length; j++) {
+                    if (j != i) {
+                        $(menu[j]).removeClass("a_hover");
+                        $(menu[j]).next().hide();
+                    }
+
+                }
+                $(this).addClass("a_hover");
+
+                if (sub_menu.css("display") == "none") {
+                    sub_menu.show();
+                } else if (sub_menu.css("display") != "none") {
+                    sub_menu.hide();
+                }
+
+            }
+        }
+        var sub_list = new Array();
+        sub_list = $(".sub_list");
+        for (var m = 0; m < sub_list.length; m++) {
+            sub_list[m].onclick = function () {
+                for (var n = 0; n < sub_list.length; n++) {
+                    if (n != m) {
+                        $(sub_list[n]).removeClass("list_hover");
+                    }
+                }
+
+                $(this).addClass("list_hover");
+            }
+        }
+    }
+</script>
+</body>
+</html>

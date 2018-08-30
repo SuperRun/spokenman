@@ -1,0 +1,12 @@
+.path{
+	height:50px;
+	line-height:80px;
+	font-size:15px;
+	
+}
+.path a{
+	cursor:pointer;
+}
+.path-split{
+	margin:0 5px;
+}

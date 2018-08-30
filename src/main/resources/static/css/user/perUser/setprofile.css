@@ -1,0 +1,10 @@
+#notices {
+    min-height: 696px;
+}
+.settings-cont .setting-left {
+    min-height: 623px;
+}
+.setting-right fieldset{
+    text-align:center;
+    border-color:white;
+}

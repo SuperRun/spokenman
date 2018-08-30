@@ -1,0 +1,99 @@
+/*new start*/
+
+.preview{
+    height: 200px;
+    display: none;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group .btn-custom{
+    margin-top: 10px;
+}
+.form_input{
+    margin-left: 5px;
+    display: inline-block;
+    width: 69%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form_textarea{
+    margin-left: 5px;
+    display: inline-block;
+    width: 85%;
+    padding: 6px 12px;
+    font-size: 14px;
+    /*line-height: 1.42857143;*/
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#organizationInfo .text_title{
+    width: 108px;
+}
+.text_scanner{
+    float: left;
+    width: 14%;
+    font-weight: normal;
+}
+.scanner_input{
+    float: left;
+    width: 86%;
+}
+
+.text_date{
+    vertical-align: middle;
+    width: 112px;
+    float: left;
+    font-weight: normal;
+    text-align: right;
+}
+.form_date{
+    width: 60%;
+    float: left;
+    margin-left: 5px;
+}
+.employee_form .text_title{
+    width: 112px;
+}
+.employee_form .form_input{
+    width: 60%;
+}
+#experience_form .text_date,#insurance .text_date,#safety .text_date,#safety .text_title{
+    width: 70px;
+}
+
+#experience_form .form_date,#insurance .form_date,#safety .form_date,#safety .form_input{
+    width: 68%;
+}
+#compensation .text_date,#compensation .text_title{
+    width: 98px;
+}
+#compensation .form_date,#compensation .form_input{
+    width: 69%;
+}
+#compensation .form_textarea{
+    width: 84%;
+}
+
+/*new end*/

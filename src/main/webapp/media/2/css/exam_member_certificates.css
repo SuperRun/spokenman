@@ -1,0 +1,14 @@
+/*certificates start*/
+
+.table>tbody>tr>td{
+    vertical-align: middle;
+}
+
+.certificates_pic{
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+
+/*certificates end*/

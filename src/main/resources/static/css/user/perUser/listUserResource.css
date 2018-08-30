@@ -1,0 +1,110 @@
+#management{
+    min-height: 1600px;
+}
+.course-list .course-one {
+    padding: 30px 0;
+    position: relative;
+    border-bottom: 1px solid #eff1f0;
+}
+.course-list ul li{
+    list-style-type:none;
+}
+.l {
+    float: left;
+}
+/* a:link, a:visited{
+    color: #14191e;
+} */
+.course-list .course-list-img img {
+    vertical-align: top;
+}
+.course-list .course-list-cont {
+    padding-left: 230px;
+}
+.course-list .study-hd {
+    font-size: 18px;
+    color: #12171b;
+    height: 29px;
+    line-height: 29px;
+    position: relative;
+}
+.course-list .study-hd a {
+    font-weight: 700;
+}
+.course-list .study-hd .i-new {
+    font-size: 14px;
+    color: #787d82;
+    line-height: 29px;
+}
+.study-hd .share-box {
+    top: -8px;
+}
+.share-box {
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    width: 30px;
+    background-color: #ff0;
+    overflow: visible;
+}
+.share-box .show-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 20px;
+    font-size: 16px;
+    text-align: right;
+    color: #bdc0c3;
+    cursor: pointer;
+}
+.course-list .study-points {
+    padding: 10px 0 22px;
+    height: 21px;
+}
+.course-list .study-points .i-left {
+    color: #f01400;
+}
+.course-list .study-points span {
+    margin-right: 14px;
+}
+.course-list .span-common, .course-list .study-hd .i-new {
+    font-size: 14px;
+}
+.course-list .catog-points {
+    position: relative;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+}
+.course-list .catog-points span {
+    display: inline-block;
+    width: 135px;
+}
+.course-list .span-common, .course-list .study-hd .i-new {
+    font-size: 14px;
+    color: #787d82;
+}
+.course-list .catog-points a {
+    color: #787d82;
+}
+.course-list .span-common i {
+    color: #b5b9bc;
+    font-style: normal;
+}
+.course-list .catog-points .continute-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    border: 1px solid #f01400;
+    color: #f01400;
+    width: 90px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #fff;
+}
+#paging div{
+	margin-left:30%;
+}
