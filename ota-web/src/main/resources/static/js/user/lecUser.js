@@ -35,17 +35,17 @@ var vue=new Vue({
 						, limit:10 
 						,cols:[[
 					          {field:'name', title:'姓名', width:80, unresize: true}
-					          ,{field:'areaName', title:'区域',width:160}
+					          ,{field:'areaName', title:'区域',width:140}
 					          ,{field:'levelName', title:'等级',width:80,sort:true}
 					          ,{field:'typeName', title: '条线', width:80, sort: true}
-					          ,{field:'orgName', title:'所属组织', width:120, unresize: true}
-					          ,{field:'phone', title:'电话', width:120, unresize: true}
+					          ,{field:'orgName', title:'所属组织', width:100, unresize: true}
+					          ,{field:'phone', title:'电话', width:100, unresize: true}
 					          ,{field:'email', title:'邮箱', width:120, unresize: true}
 					          ,{field:'statusName', title:'状态', width:70,sort: true,unresize: true}
 					          ,{title:'讲师经历', width:120, templet:function(d){
 					        	  return "<a class='layui-btn layui-btn-primary layui-btn-xs' href='/platform/getExprience/"+d.id+"'>查看讲师经历</a>"
 					          }}
-					          ,{field:'operate', title:'操作',templet:function(d){
+					          ,{field:'operate',width:188, title:'操作',templet:function(d){
 								    if(d.statusName=='正常'){
 								    	return "<a class='layui-btn layui-btn-primary layui-btn-xs' onclick='editUser("+d.id+","+d.areaId+")'>修改</a>"
 											   +"<a class='layui-btn layui-btn-primary layui-btn-xs' onclick='updateUserStatus("+d.id+",-1)'>删除</a>"
@@ -197,8 +197,10 @@ var vue=new Vue({
                         skin: 'layui-layer-rim',
                         area: ['500px', '350px'], 
                         content: $('#add-per-user'),
-                        success:function(){
+                        success:function(layer){
               			//增加表单部分的select
+                    	var mask = $(".layui-layer-shade");
+                        mask.appendTo(layer.parent());
               		    var default2={
               		            s1: 'add-province',
               		            s2: 'add-city',
@@ -272,7 +274,11 @@ function editUser(userId,areaId){
 		            type: 1,
 		            skin: 'layui-layer-rim', 
 		            area: ['500px', '350px'], 
-		            content: $('#edit-per-user')
+		            content: $('#edit-per-user'),
+		            success: function(layero, index){
+		            	var mask = $(".layui-layer-shade");
+                        mask.appendTo("#app");
+		            }
 		        });
         	});
         	
@@ -288,19 +294,18 @@ layui.use('element',function(){
     $('#menu li').each(function(index){
     	
     	if(index==1){
-    		$(this).addClass("layui-this");
+    		$(this).addClass("layui-nav-itemed");
     		$(this).find("dd").each(function(i){
     			if(i==2){
     				$(this).addClass("menu-this");
     				$(this).find('a').css('color','#fff');
     			}else{
     				$(this).removeClass("menu-this");
-    				$(this).find('a').css('color','#000');
     			}
     		});
     		
     	}else{
-    		$(this).removeClass("layui-this");
+    		$(this).removeClass("layui-nav-itemed");
     	}
     });
 });

@@ -8,11 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/path.css">
 </head>
 
-<body >
-	
-	<#include "../header.ftl">	
-	<#include "../platformMenu.ftl">	
-<div id="app">
+<body>
+	<#include "../platformFrame.ftl">	
+<div id="app" class="layui-body">
 	<div class="layui-fluid management" >
 		<div class="layui-main" style="min-height: 400px">
 			<div class="layui-row path">
@@ -21,9 +19,9 @@
 				<span><a style="color:#c2c2c2">个人用户</a></span>
 			</div>		
 			<div class="search-bar">
-				<div style="margin-top: 2%;margin-left:10%">
+				<div style="margin-top: 2%;margin-left:4%">
 					<form class="layui-form " id="search-info" lay-filter="searchForm">
-						<div class="layui-inline" style="width: 18%">
+						<div class="layui-inline" style="width: 20%">
 							<label class="layui-form-label search-bar-label" style="width: 20%;">状态</label>
 							<div class="layui-input-inline" style="width: 60%;">
 						        <select id="searchStatus"  name="status" lay-verify="required" lay-search=""  >
@@ -73,22 +71,8 @@
 		    
 		</div>
 	</div>
-	<!-- 左边隐藏栏 -->
-	<div id="left-menu" style="display: block;">
-		<dl id="left-menu-item" class="layui-nav-child" style="display: block;">
-	      <dd><a href="javascript:;">个人资料</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	    </dl> 
-	</div>
 
-	<#include "../footer.ftl">
+	<#include "../platformFooter.ftl">
 
 	<!-- 增加单位用户 -->
 	<div id="add-per-user" style="display: none;padding: 20px;">
@@ -211,9 +195,7 @@
 			</div>		  	  		  		  		  		  		        
         </form>
 	</div>
-	
-	
-		
+
 </div>
 
 	<#include "../linkage.ftl">

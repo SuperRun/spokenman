@@ -43,14 +43,4 @@ layui.use(['element', 'form'],function(){
 	});
 	
 
-	
-	/*侧边隐藏菜单*/
-	$("#left-menu-item").hover(function(){
-	  $(this).animate({left:0},500);
-	},function(){
-	  $(this).animate({left:-115},500);
-	});
-	
-	
-
 });

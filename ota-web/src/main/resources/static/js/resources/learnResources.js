@@ -21,9 +21,9 @@ var vw=new Vue({
     		        ,cols: [[ //标题栏
     		            {field: 'name', title: '资源名称', width: 120}
     		            ,{field: 'description', title: '资源介绍', width: 120}
-    		            ,{field: 'authTypeName', title: '权限名称', width: 120}
-    		            ,{field: 'levelName', title: '级别', width: 120}
-    		            ,{field: 'typeIdName', title: '条线', width: 120}
+    		            ,{field: 'authTypeName', title: '权限名称', width: 110}
+    		            ,{field: 'levelName', title: '级别', width: 100}
+    		            ,{field: 'typeIdName', title: '条线', width: 100}
     		            ,{field: 'url', title: '资源链接', width: 90,align:'center',templet:function(d){
     		            	if(d.type==1){
     		            		return "<a class='goto' href='/puUser/questionRes/"+d.id+"'><i class='layui-icon' style='font-size:22px'>&#xe6ed;</i></a>";
@@ -45,7 +45,7 @@ var vw=new Vue({
     		            }}
     		            ,{field: 'statusName', title: '状态', width: 100}
     		            ,{field: 'remark', title: '备注', width: 100}
-    		            ,{fixed: 'right', title: '操作',width: 165, align:'center', templet:  function(d){
+    		            ,{fixed: 'right', title: '操作',width: 145, align:'center', templet:  function(d){
     		            	if(d.statusName =='正常'){
     		            		return "<a class='layui-btn layui-btn-xs layui-btn-primary' onclick='editResource("+d.id+")'>修改</a>"
     		            			   +"<a class='layui-btn layui-btn-primary layui-btn-xs' lay-event='del'>删除</a>";
@@ -222,19 +222,18 @@ layui.use('element',function(){
 	$('#menu li').each(function(index){
 		
 		if(index==2){
-			$(this).addClass("layui-this");
+			$(this).addClass("layui-nav-itemed");
 			$(this).find("dd").each(function(i){
 				if(i==0){
 					$(this).addClass("menu-this");
 					$(this).find('a').css('color','#fff');
 				}else{
 					$(this).removeClass("menu-this");
-					$(this).find('a').css('color','#000');
 				}
 			});
 			
 		}else{
-			$(this).removeClass("layui-this");
+			$(this).removeClass("layui-nav-itemed");
 		}
 	});
 });

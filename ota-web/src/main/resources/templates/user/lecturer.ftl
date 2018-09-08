@@ -10,9 +10,8 @@
 
 <body >
 	
-	<#include "../header.ftl">	
-	<#include "../platformMenu.ftl">	
-<div id="app">
+	<#include "../platformFrame.ftl">		
+<div id="app" class="layui-body">
 	<div class="layui-fluid management" >
 		<div class="layui-main" style="min-height: 400px">
 			<div class="layui-row path">
@@ -23,7 +22,7 @@
 				<span><a style="color:#c2c2c2">讲师经历管理</a></span>
 			</div>			
 			<div class="search-bar">
-				<div style="margin-top: 2%;margin-left:10%">
+				<div style="margin-top: 2%;margin-left:4%">
 					<form class="layui-form " id="search-info" lay-filter="searchForm">
                          <div class="layui-inline" style="width: 18%">
 	    			    	<label class="layui-form-label search-bar-label"  style="width: 20%;">条线</label>
@@ -86,22 +85,8 @@
 		    
 		</div>
 	</div>
-	<!-- 左边隐藏栏 -->
-	<div id="left-menu" style="display: block;">
-		<dl id="left-menu-item" class="layui-nav-child" style="display: block;">
-	      <dd><a href="javascript:;">个人资料</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	      <dd><a href="javascript:;">设置密码</a></dd>
-	      <dd><a href="javascript:;">电商平台</a></dd>
-	    </dl> 
-	</div>
 
-	<#include "../footer.ftl">
+	<#include "../platformFooter.ftl">
 
 
 	

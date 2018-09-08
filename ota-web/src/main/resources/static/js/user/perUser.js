@@ -42,14 +42,14 @@ var vue=new Vue({
 						, limit:10 
 						,cols:[[
 					          {field:'name', title:'姓名', width:80, unresize: true}
-					          ,{field:'areaName', title:'区域',width:160}
+					          ,{field:'areaName', title:'区域',width:150}
 					          ,{field:'levelName', title:'等级',width:80,sort:true}
 					          ,{field:'typeName', title: '条线', width:80, sort: true}
-					          ,{field:'orgName', title:'所属组织', width:130, unresize: true}
+					          ,{field:'orgName', title:'所属组织', width:110, unresize: true}
 					          ,{field:'phone', title:'电话', width:120, unresize: true}
 					          ,{field:'email', title:'邮箱', width:120, unresize: true}
 					          ,{field:'statusName', title:'状态', width:70,sort: true,unresize: true}
-					          ,{field:'userType', title:'用户类型', width:100, templet:function(d){
+					          ,{field:'userType', title:'用户类型', width:95, templet:function(d){
 					        	  if(d.orgId==1){
 								    	return "<span>个人用户</span>";
 								    }else{
@@ -220,10 +220,13 @@ var vue=new Vue({
                         title:'新增个人用户',
                         type: 1,
                         skin: 'layui-layer-rim',
-                        area: ['500px', '600px'], 
+                        area: ['500px', '400px'], 
                         content: $('#add-per-user'),
-                        success:function(){
+                        success:function(layer){
 	              			//增加表单部分的select
+                        	var mask = $(".layui-layer-shade");
+                            mask.appendTo(layer.parent());
+                            console.log(layer);
 	              		    var default2={
 	              		            s1: 'add-province',
 	              		            s2: 'add-city',
@@ -276,7 +279,6 @@ var vue=new Vue({
                     		var layer=layui.layer;
                     		self.isChanged2=true;
                     		layer.close(self.editIndex);  
-                    		
                     	});
                     }
             	});
@@ -296,6 +298,7 @@ function editUser(userId,areaId){
 			
         	layui.use(['layer','province'],function(){
         		var province=layui.province;
+        		var layer=layui.layer;
             	var areaCode=new Array();
             	if(areaId!=null){
             		console.log(areaId);
@@ -320,6 +323,11 @@ function editUser(userId,areaId){
 		            skin: 'layui-layer-rim', 
 		            area: ['500px', '350px'], 
 		            content: $('#edit-per-user'),
+		            success: function(layero, index){
+		            	var mask = $(".layui-layer-shade");
+                        mask.appendTo("#app");
+                        console.log(layero);
+		            },
                     end:function(){
                     	if(vue.isChanged2){
                     		layui.use('table',function(){
@@ -354,19 +362,18 @@ layui.use('element',function(){
     $('#menu li').each(function(index){
     	
     	if(index==1){
-    		$(this).addClass("layui-this");
+    		$(this).addClass("layui-nav-itemed");
     		$(this).find("dd").each(function(i){
     			if(i==0){
     				$(this).addClass("menu-this");
     				$(this).find('a').css('color','#fff');
     			}else{
     				$(this).removeClass("menu-this");
-    				$(this).find('a').css('color','#000');
     			}
     		});
     		
     	}else{
-    		$(this).removeClass("layui-this");
+    		$(this).removeClass("layui-nav-itemed");
     	}
     });
 });
