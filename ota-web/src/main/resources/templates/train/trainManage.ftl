@@ -9,13 +9,14 @@
 </head>
 
 <body>
-	
+
+	<#include "../header.ftl">	
 	<#if Session.sessionInfo.type ==0> 	
-	<#include "../platformFrame.ftl">
+	<#include "../platformMenu.ftl">
 	<#else>
 	<#include "../orgMenu.ftl">
 	</#if>
-<div id="app" class="layui-body">
+<div id="app">
 
 <div class="layui-fluid management">
 	<input id="userType" type="hidden" value="${(Session.sessionInfo.type)}"  class="layui-input"/>
@@ -59,7 +60,7 @@
                     </div>
                 </div>
 				<#if Session.sessionInfo.type ==0> 	
-				    <div class="layui-inline" style="width: 23%;">
+				    <div class="layui-inline" style="width: 18%;">
 				        <label class="layui-form-label" style="width: 30%;">发布单位</label>
 				        <div class="layui-input-inline">
 				            <select id="searchOrgName"  lay-search="">
@@ -68,14 +69,14 @@
 				        </div>
 				    </div>
 				</#if>  
-                <div class="layui-inline" style="width: 18.5%;">
+                <div class="layui-inline" style="width: 18%;">
                     <label class="layui-form-label" style="width: 30%;">发布人</label>
                     <div class="layui-input-inline">
                         <input type="text" id="userName" autocomplete="off" class="layui-input"/>
                     </div>
                 </div>
 
-                <div class="layui-inline" style="width:30.5%">
+                <div class="layui-inline" style="width:30%">
                     <label class="layui-form-label" style="width:17%">创建时间</label>
                     <div class="layui-input-inline" style="width:50%">
                         <input type="text"  class="layui-input" id="createTime" placeholder="yyyy-MM-dd HH:mm:ss">
@@ -115,7 +116,7 @@
 
 </div>
 
-<#include "../platformFooter.ftl">
+<#include "../footer.ftl">
 
 
 <script src="../../js/train/trainManage.js"></script>

@@ -9,9 +9,10 @@
 </head>
 
 <body>
-<#include "../platformFrame.ftl">	
+<#include "../header.ftl">
+<#include "../platformMenu.ftl">
  	
-<div id="app" class="layui-body">
+<div id="app">
 <div class="layui-fluid management">
     <div class="layui-main" style="min-height: 400px">
 		<div class="layui-row path">
@@ -73,7 +74,7 @@
 		                <input type="text" id="lecturerName" autocomplete="off" class="layui-input"/>
 		            </div>
 		        </div>
-		        <div class="layui-inline" style="width:24%">
+		        <div class="layui-inline" style="width:30%">
 		            <label class="layui-form-label" style="width:33%">日期时间选择</label>
 		            <div class="layui-input-inline" style="width:50%">
 		                <input type="text" v-model="searchForm.startTime" class="layui-input" id="time" >
@@ -103,9 +104,8 @@
         </div>
     </div>
 </div>
-<#include "../platformFooter.ftl">
 </div>
-<#include "../linkage.ftl">
+<#include "../footer.ftl">
 <script src="../../js/getOrgType.js"></script>
 <script src="../../js/resources/learnResources.js"></script>
 

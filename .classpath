@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="ota-web/src/main/java"/>
-	<classpathentry kind="src" path="ota-web/src/test/java"/>
-	<classpathentry kind="lib" path="ota-web/src/main/webapp/WEB-INF/lib/jave-1.0.2.jar"/>
-	<classpathentry kind="lib" path="ota-web/src/main/webapp/WEB-INF/lib/mysql-connector-java-5.1.39.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>

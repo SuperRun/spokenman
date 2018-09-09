@@ -1,7 +1,5 @@
 #login{
-	margin-top:20%;
     padding: 40px 30px;
-    width:70%;
 }
 .wrap-item {
     height: 44px;
@@ -29,19 +27,4 @@
     margin-top: 2px;
     padding-left: 50px;
     box-sizing: border-box;
-}
-#login-img{
-	text-align:center;
-}
-#login-img img{
-	width:80%;
-	padding-top:15%;
-}
-#login-footer{
-	position:fixed;
-	left:0px;
-	right:0px;
-	bottom:0px;
-	text-align:center;
-	height:50px;
 }

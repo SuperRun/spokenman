@@ -123,18 +123,19 @@ layui.use('element',function(){
     $('#menu li').each(function(index){
     	
     	if(index==1){
-    		$(this).addClass("layui-nav-itemed");
+    		$(this).addClass("layui-this");
     		$(this).find("dd").each(function(i){
     			if(i==2){
     				$(this).addClass("menu-this");
     				$(this).find('a').css('color','#fff');
     			}else{
     				$(this).removeClass("menu-this");
+    				$(this).find('a').css('color','#000');
     			}
     		});
     		
     	}else{
-    		$(this).removeClass("layui-nav-itemed");
+    		$(this).removeClass("layui-this");
     	}
     });
 });
