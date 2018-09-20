@@ -68,11 +68,6 @@ public class TrainingDto {
     @ApiModelProperty("培训描述")
     private String description;
 
-    @ApiModelProperty("培训关联考试 id")
-    private Integer examId;
-    @ApiModelProperty("培训关联考试名称")
-    private String examName;
-
     @ApiModelProperty("创建时间")
     private Date createTime;
 

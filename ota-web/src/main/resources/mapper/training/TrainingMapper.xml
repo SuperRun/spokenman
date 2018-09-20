@@ -48,9 +48,6 @@
             <if test="description != null">
                 description,
             </if>
-            <if test="examId != null">
-                exam_id,
-            </if>
             <if test="createTime != null">
                 create_time,
             </if>
@@ -101,9 +98,6 @@
             </if>
             <if test="description != null">
                 #{description},
-            </if>
-            <if test="examId != null">
-                #{examId},
             </if>
             <if test="createTime != null">
                 #{createTime},
@@ -173,9 +167,6 @@
             <if test="description != null">
                 and description = #{description}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <if test="createTime != null">
                 and create_time = #{createTime}
             </if>
@@ -237,9 +228,6 @@
             <if test="description != null">
                 and description = #{description}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <if test="createTime != null">
                 and create_time = #{createTime}
             </if>
@@ -295,9 +283,6 @@
             <if test="description != null">
                 description = #{description},
             </if>
-            <if test="examId != null">
-                exam_id = #{examId},
-            </if>
             <if test="createTime != null">
                 create_time = #{createTime},
             </if>
@@ -342,9 +327,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <if test="status != null">
                 and status = #{status}
             </if>
@@ -382,9 +364,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <if test="status != null">
                 and status = #{status}
             </if>
@@ -421,9 +400,6 @@
             </if>
             <if test="typeId != null">
                 and type_id = #{typeId}
-            </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
             </if>
             <!-- 报名开始前 -->
             <if test="now != null">
@@ -464,9 +440,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 报名开始前 -->
             <if test="now != null">
                 and sign_start_time &gt;= #{now}
@@ -504,9 +477,6 @@
             </if>
             <if test="typeId != null">
                 and type_id = #{typeId}
-            </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
             </if>
             <!-- 当前时间在报名时间内 -->
             <if test="now != null">
@@ -550,9 +520,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 当前时间在报名时间内 -->
             <if test="now != null">
                 and sign_start_time &lt;= #{now}
@@ -593,9 +560,6 @@
             </if>
             <if test="typeId != null">
                 and type_id = #{typeId}
-            </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
             </if>
             <!-- 当前时间在报名结束及开始之间 -->
             <if test="now != null">
@@ -638,9 +602,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 当前时间在报名结束及开始之间 -->
             <if test="now != null">
                 and start_time &gt;= #{now}
@@ -682,9 +643,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 当前时间在开始及结束之间 -->
             <if test="now != null">
                 and start_time &lt;= #{now}
@@ -725,9 +683,6 @@
             </if>
             <if test="typeId != null">
                 and type_id = #{typeId}
-            </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
             </if>
             <!-- 当前时间在开始及结束之间 -->
             <if test="now != null">
@@ -771,9 +726,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 当前时间在结束后且未确认 -->
             <if test="now != null">
                 and end_time &lt;= #{now}
@@ -813,9 +765,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             <!-- 当前时间在结束后且未确认 -->
             <if test="now != null">
                 and end_time &lt;= #{now}
@@ -854,9 +803,6 @@
             <if test="typeId != null">
                 and type_id = #{typeId}
             </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
-            </if>
             and status = 6
         </trim>
         limit #{offset},#{limit}
@@ -890,9 +836,6 @@
             </if>
             <if test="typeId != null">
                 and type_id = #{typeId}
-            </if>
-            <if test="examId != null">
-                and exam_id = #{examId}
             </if>
             and status = 6
         </trim>

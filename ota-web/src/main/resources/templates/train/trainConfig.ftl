@@ -9,14 +9,13 @@
 </head>
 
 <body>
-	<#include "../header.ftl">	
 	<#if Session.sessionInfo.type ==0> 	
-	<#include "../platformMenu.ftl">
+	<#include "../platformFrame.ftl">
 	<#else>
 	<#include "../orgMenu.ftl">
 	</#if>
 	<input id="userType" type="hidden" value="${(Session.sessionInfo.type)}"  class="layui-input"/>
-<div id="app">	
+<div id="app" class="layui-body">	
 <div class="layui-fluid management">
     <div class="layui-main">
         <div class="layui-row" style="margin-top: 20px;">
@@ -34,7 +33,7 @@
                             {{training.levelName}}
                         </div>
                     </div>
-                    <div class="layui-inline" style="width:12%">
+                    <div class="layui-inline" style="width:13%">
                         <label class="layui-form-label">条线:</label>
                         <div class="layui-input-inline train-info-detail" id="tiaoxian">
                           {{training.typeName}}
@@ -218,8 +217,8 @@
                     <div class="layui-col-md10"  style="margin-top: 2%">
                         <form class="layui-form " action="">
                             <div class="layui-inline" style="width: 25%">
-                                <label class="layui-form-label search-bar-label" style="width: 37%;"><span>必修：</span><span>{{training.optionalScore}}分</span></label>
-                                <label class="layui-form-label search-bar-label" style="width: 37%;"><span>选修：</span><span>{{training.requiredScore}}分</span></label>
+                                <label class="layui-form-label search-bar-label" style="width: 34%;"><span>必修：</span><span>{{training.optionalScore}}分</span></label>
+                                <label class="layui-form-label search-bar-label" style="width: 34%;"><span>选修：</span><span>{{training.requiredScore}}分</span></label>
                             </div>
                             <div class="layui-inline" style="width: 18%">
                                 <label class="layui-form-label search-bar-label" style="width: 18%;">讲师</label>
@@ -280,7 +279,7 @@
 </div>
 
 </div>
-<#include "../footer.ftl">	
+<#include "../platformFooter.ftl">	
 <#include "../linkage.ftl">
 <script src="../../js/common/areaLayer.js"></script>
 <script src="../../js/train/trainConfig.js"></script>

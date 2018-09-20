@@ -15,7 +15,6 @@ var vw=new Vue({
 			levelName:"",
 			typeName:"",
 			description:"",
-			examName:"",
 			orgName:"",
 			orgId:"",
 			createTime:""
@@ -178,8 +177,7 @@ var vw=new Vue({
 					         } 
 					         	
 			        	 }
-				        	 		        	 
-			            
+				        	 		        
 			         }else if(layEvent === 'getExamScore'){
 			             $('#test').show();
 			             $('#list').hide();
@@ -267,22 +265,21 @@ layui.use(['element', 'form'],function(){
 	//菜单条事件
 	$('#menu li').each(function(index){
 		
-		if(index==5){
-			$(this).addClass("layui-this");
+		if(index==3){
+			$(this).addClass("layui-nav-itemed");
 			$(this).find("dd").each(function(i){
 				if(i==0){
 					$(this).addClass("menu-this");
 					$(this).find('a').css('color','#fff');
 				}else{
 					$(this).removeClass("menu-this");
-					$(this).find('a').css('color','#000');
 				}
 			});
 			
 		}else{
-			$(this).removeClass("layui-this");
+			$(this).removeClass("layui-nav-itemed");
 		}
-	});	
+	});
 });
 
 function pass(id){

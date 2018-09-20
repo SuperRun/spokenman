@@ -175,12 +175,6 @@ public class TrainingManagerImpl implements TrainingManager {
             trainingDto.setLevelName(orgLevelType.getName());
         }
 
-        // 考试名称
-        if (training.getExamId() != null) {
-            ExamExposer examExposer = examBaseService.getexamDetail(training.getExamId());
-            trainingDto.setExamName(examExposer.getName());
-        }
-
         // 条线
         if (training.getTypeId() != null) {
             DataDictionary dataDictionary = dataDictionaryService.getById(training.getTypeId());

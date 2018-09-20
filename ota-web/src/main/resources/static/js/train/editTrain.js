@@ -14,8 +14,7 @@ new Vue({
 			level:"",
 			typeId:"",
 			description:"",
-			examId:""
-				
+			pic:""
 		},
 		trainCover:""
 	},
@@ -34,18 +33,7 @@ new Vue({
 	},
 	methods:{
 		fetch:function(){
-			layui.use(['element', 'form'],function(){
-				var form=layui.form;
-				//获取关联考试
-				$.get('/exam/member/list',function(res){
-					console.log("关联考试");
-					console.log(res);
-					for(var i=0;i<res.data.length;i++){
-						$("#test").append("<option value='"+res.data[i].examId+"'>"+res.data[i].name+"</option>");
-					}
-					form.render();
-				});
-			});
+			
 			layui.use('laydate', function(){
 				var laydate = layui.laydate;
 				//时间选择器

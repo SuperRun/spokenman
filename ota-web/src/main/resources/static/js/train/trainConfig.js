@@ -16,7 +16,6 @@ var vw=new Vue({
 			levelName:"",
 			typeName:"",
 			description:"",
-			examName:"",
 			orgName:"",
 			orgId:"",
 			createTime:""
@@ -182,7 +181,7 @@ var vw=new Vue({
 				layer.open({
 	                type: 2 //根据组织ID列出所有用户
 	                ,title: '新增培训名单'
-	                ,area: ['900px', '600px']
+	                ,area: ['1200px', '600px']
 	                ,maxmin: true
 	                ,content: '/puUser/addTrainUser/'+vw.trainingId
 	                ,cancel:function(){
@@ -247,7 +246,7 @@ var vw=new Vue({
 				layer.open({
 		            type: 2 //此处以iframe举例
 		            ,title: '添加培训资源'
-		            ,area: ['900px', '520px']
+		            ,area: ['1200px', '520px']
 		            ,maxmin: true
 		            ,content: '/puUser/addTrainResource/'+vw.trainingId
 		            ,cancel:function(){
@@ -376,19 +375,18 @@ layui.use('element',function(){
 	$('#menu li').each(function(index){
 		
 		if(index==3){
-			$(this).addClass("layui-this");
+			$(this).addClass("layui-nav-itemed");
 			$(this).find("dd").each(function(i){
 				if(i==0){
 					$(this).addClass("menu-this");
 					$(this).find('a').css('color','#fff');
 				}else{
 					$(this).removeClass("menu-this");
-					$(this).find('a').css('color','#000');
 				}
 			});
 			
 		}else{
-			$(this).removeClass("layui-this");
+			$(this).removeClass("layui-nav-itemed");
 		}
 	});
 });

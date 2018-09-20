@@ -46,8 +46,6 @@ public class Training {
 
     private String description;
 
-    private Integer examId;
-
     private Date createTime;
 
     private Short status;

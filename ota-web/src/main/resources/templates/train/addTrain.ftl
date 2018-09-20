@@ -63,16 +63,6 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">关联考试</label>
-                <div class="layui-input-block">
-                    <select id="test" lay-filter="aihao">
-                    	<option value="">请选择关联考试</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
             <div class="layui-inline" style="width:45%">
                 <label class="layui-form-label">学分要求</label>
                 <div class="layui-input-block" style="width:50%">

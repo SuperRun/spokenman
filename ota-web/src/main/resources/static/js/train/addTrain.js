@@ -12,7 +12,6 @@ new Vue({
 			level:"",
 			typeId:"",
 			description:"",
-			examId:"",
 			pic:""
 		},
 		trainCover:""
@@ -23,18 +22,6 @@ new Vue({
 	},
 	methods:{
 		fetch:function(){
-			layui.use(['element', 'form'],function(){
-				var form=layui.form;
-				//获取关联考试
-				$.get('/exam/member/list',function(res){
-					console.log("关联考试");
-					console.log(res);
-					for(var i=0;i<res.data.length;i++){
-						$("#test").append("<option value='"+res.data[i].examId+"'>"+res.data[i].name+"</option>");
-					}
-					form.render();
-				});
-			});
 
 			layui.use('laydate', function(){
 				var laydate = layui.laydate;
@@ -81,7 +68,6 @@ new Vue({
 			var self=this;
 			self.addTrain.level=$("#level").val();
 			self.addTrain.typeId=$("#typeId").val();
-			self.addTrain.examId=$("#test").val();
 			self.addTrain.startTime=$("#trainTime").val().split(" - ")[0];
 			self.addTrain.endTime=$("#trainTime").val().split(" - ")[1];
 			self.addTrain.signStartTime=$("#signTime").val().split(" - ")[0];
